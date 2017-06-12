@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Omnes_GirlScouts-Regular.otf">
+            <string>Omnes_GirlScouts-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AboutMeApp">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccj-NB-pUe">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSs-gu-qub">
+                    <rect key="frame" x="67.5" y="40" width="240" height="360"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ribbon" translatesAutoresizingMaskIntoConstraints="NO" id="rtq-mC-o2r">
+                            <rect key="frame" x="8" y="56" width="48" height="48"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Baa-Ph-6Qw">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="32"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQ4-G9-l7q">
+                                    <rect key="frame" x="200" y="0.0" width="40" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="TSj-ft-4pJ"/>
+                                        <constraint firstAttribute="width" constant="40" id="dWp-oL-KvL"/>
+                                    </constraints>
+                                    <state key="normal" image="ic_cross-1"/>
+                                    <connections>
+                                        <action selector="actionBtnCancel:" destination="iN0-l3-epB" eventType="touchUpInside" id="sZM-JS-Qbo"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8q-W2-XnM">
+                                    <rect key="frame" x="84" y="6" width="71" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.50196078430000002" green="1" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="A8q-W2-XnM" firstAttribute="centerX" secondItem="Baa-Ph-6Qw" secondAttribute="centerX" id="B3s-4h-28m"/>
+                                <constraint firstAttribute="height" constant="32" id="S9n-eQ-e89"/>
+                                <constraint firstAttribute="trailing" secondItem="sQ4-G9-l7q" secondAttribute="trailing" id="W5V-aZ-SIQ"/>
+                                <constraint firstItem="A8q-W2-XnM" firstAttribute="centerY" secondItem="Baa-Ph-6Qw" secondAttribute="centerY" id="fCO-lh-wMK"/>
+                                <constraint firstItem="sQ4-G9-l7q" firstAttribute="centerY" secondItem="Baa-Ph-6Qw" secondAttribute="centerY" id="gsV-bQ-lwS"/>
+                            </constraints>
+                        </view>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJg-6L-F8O">
+                            <rect key="frame" x="64" y="48" width="160" height="88"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="88" id="28j-0t-qJp"/>
+                            </constraints>
+                            <string key="text">Firstly, thank you for downloading ArtGround. I appreciate every single support from you guys, the users of this application is the only reason why I love to do what I does which is to create fun things.
+-Dennis</string>
+                            <color key="textColor" red="0.52941176469999995" green="0.52941176469999995" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Omnes_GirlScouts-Regular" family="Omnes_GirlScouts" pointSize="10"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_aunty" translatesAutoresizingMaskIntoConstraints="NO" id="h7w-2r-NBS">
+                            <rect key="frame" x="176" y="288" width="48" height="48"/>
+                        </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyj-ec-XnA">
+                            <rect key="frame" x="16" y="152" width="152" height="184"/>
+                            <string key="text">The general purpose of this application is to allow young artist to get recognition through the sales of their personalized arts. Allowing them to do what they truely love and earn a bit of income from chasing their passion.</string>
+                            <color key="textColor" red="0.52941176469999995" green="0.52941176469999995" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Omnes_GirlScouts-Regular" family="Omnes_GirlScouts" pointSize="10"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Pyj-ec-XnA" secondAttribute="bottom" constant="24" id="03L-r1-vEL"/>
+                        <constraint firstAttribute="trailing" secondItem="h7w-2r-NBS" secondAttribute="trailing" constant="16" id="14p-E0-Tyq"/>
+                        <constraint firstItem="rtq-mC-o2r" firstAttribute="leading" secondItem="vSs-gu-qub" secondAttribute="leading" constant="8" id="63z-CU-lmF"/>
+                        <constraint firstItem="rtq-mC-o2r" firstAttribute="top" secondItem="Baa-Ph-6Qw" secondAttribute="bottom" constant="24" id="6l1-G3-LnF"/>
+                        <constraint firstAttribute="trailing" secondItem="Baa-Ph-6Qw" secondAttribute="trailing" id="8GV-Kv-KFG"/>
+                        <constraint firstItem="h7w-2r-NBS" firstAttribute="leading" secondItem="Pyj-ec-XnA" secondAttribute="trailing" constant="8" id="CCw-y4-ERw"/>
+                        <constraint firstItem="Baa-Ph-6Qw" firstAttribute="top" secondItem="vSs-gu-qub" secondAttribute="top" id="Dp8-ja-CO2"/>
+                        <constraint firstItem="Pyj-ec-XnA" firstAttribute="top" secondItem="fJg-6L-F8O" secondAttribute="bottom" constant="16" id="HO2-PH-XiW"/>
+                        <constraint firstItem="h7w-2r-NBS" firstAttribute="bottom" secondItem="Pyj-ec-XnA" secondAttribute="bottom" id="KIe-62-fjj"/>
+                        <constraint firstItem="Pyj-ec-XnA" firstAttribute="leading" secondItem="vSs-gu-qub" secondAttribute="leading" constant="16" id="MIp-zM-Ntw"/>
+                        <constraint firstItem="fJg-6L-F8O" firstAttribute="top" secondItem="rtq-mC-o2r" secondAttribute="top" constant="-8" id="SZg-e2-BhF"/>
+                        <constraint firstAttribute="width" constant="240" id="T0A-TO-s4v"/>
+                        <constraint firstAttribute="height" constant="360" id="enI-QE-SNS"/>
+                        <constraint firstAttribute="trailing" secondItem="fJg-6L-F8O" secondAttribute="trailing" constant="16" id="fhb-0V-Swh"/>
+                        <constraint firstItem="fJg-6L-F8O" firstAttribute="leading" secondItem="rtq-mC-o2r" secondAttribute="trailing" constant="8" id="gpE-ZZ-1Lc"/>
+                        <constraint firstItem="Baa-Ph-6Qw" firstAttribute="leading" secondItem="vSs-gu-qub" secondAttribute="leading" id="ws7-8b-QQn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ccj-NB-pUe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6h8-ET-toj"/>
+                <constraint firstItem="ccj-NB-pUe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9sU-7S-04h"/>
+                <constraint firstItem="vSs-gu-qub" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="AQ0-QK-v0L"/>
+                <constraint firstAttribute="bottom" secondItem="ccj-NB-pUe" secondAttribute="bottom" id="bJb-bE-mTn"/>
+                <constraint firstItem="vSs-gu-qub" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lu6-Ee-rrU"/>
+                <constraint firstAttribute="trailing" secondItem="ccj-NB-pUe" secondAttribute="trailing" id="oCx-6T-mf9"/>
+            </constraints>
+            <connections>
+                <outlet property="viewTop" destination="Baa-Ph-6Qw" id="2Kl-ZV-yiV"/>
+                <outlet property="viewWidthConstraint" destination="T0A-TO-s4v" id="RUY-XJ-Fxm"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_aunty" width="48" height="48"/>
+        <image name="ic_cross-1" width="16" height="16"/>
+        <image name="ic_ribbon" width="48" height="48"/>
+    </resources>
+</document>

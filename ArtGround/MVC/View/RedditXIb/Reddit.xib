@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Reddit">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-Qf-d9x">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bJ-7a-OmV">
+                    <rect key="frame" x="20" y="40" width="560" height="288"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RedditName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IEb-en-Nqc">
+                            <rect key="frame" x="20" y="124" width="520" height="40"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Jls-2a-Ydc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="WFX-w3-gmk"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-ie-EwF">
+                            <rect key="frame" x="20" y="184" width="520" height="40"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="78U-b2-uXf"/>
+                            </connections>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_reddit_logo" translatesAutoresizingMaskIntoConstraints="NO" id="CY9-jp-oW5">
+                            <rect key="frame" x="244" y="20" width="72" height="72"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nz3-0U-f02">
+                            <rect key="frame" x="512" y="8" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Jrz-8D-hXT"/>
+                                <constraint firstAttribute="height" constant="40" id="vph-Td-CoV"/>
+                            </constraints>
+                            <state key="normal" image="ic_close"/>
+                            <connections>
+                                <action selector="actionBtnCancel:" destination="iN0-l3-epB" eventType="touchUpInside" id="FMd-vO-sPa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sp-OH-mH2">
+                            <rect key="frame" x="0.0" y="248" width="560" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="fym-7B-ZTk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="Submit">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionBtnSubmit:" destination="iN0-l3-epB" eventType="touchUpInside" id="vwr-RP-Uud"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="nz3-0U-f02" firstAttribute="top" secondItem="5bJ-7a-OmV" secondAttribute="top" constant="8" id="2Ng-Fr-0B8"/>
+                        <constraint firstAttribute="bottom" secondItem="1Sp-OH-mH2" secondAttribute="bottom" id="B2Y-CR-qzl"/>
+                        <constraint firstAttribute="trailing" secondItem="IEb-en-Nqc" secondAttribute="trailing" constant="20" symbolic="YES" id="GCB-Ra-yfN"/>
+                        <constraint firstAttribute="trailing" secondItem="nz3-0U-f02" secondAttribute="trailing" constant="8" id="Kag-Iz-coz"/>
+                        <constraint firstItem="CY9-jp-oW5" firstAttribute="top" secondItem="5bJ-7a-OmV" secondAttribute="top" constant="20" id="PZw-QL-jGa"/>
+                        <constraint firstItem="1Sp-OH-mH2" firstAttribute="leading" secondItem="5bJ-7a-OmV" secondAttribute="leading" id="SjB-P1-c1h"/>
+                        <constraint firstItem="CY9-jp-oW5" firstAttribute="centerX" secondItem="5bJ-7a-OmV" secondAttribute="centerX" id="WdC-Xh-d35"/>
+                        <constraint firstItem="gmL-ie-EwF" firstAttribute="leading" secondItem="IEb-en-Nqc" secondAttribute="leading" id="ZI6-Rj-F8H"/>
+                        <constraint firstAttribute="height" constant="288" id="lrU-cs-tzs"/>
+                        <constraint firstItem="gmL-ie-EwF" firstAttribute="top" secondItem="IEb-en-Nqc" secondAttribute="bottom" constant="20" id="n2j-wN-zIh"/>
+                        <constraint firstItem="IEb-en-Nqc" firstAttribute="top" secondItem="CY9-jp-oW5" secondAttribute="bottom" constant="32" id="rax-tm-B1M"/>
+                        <constraint firstItem="gmL-ie-EwF" firstAttribute="trailing" secondItem="IEb-en-Nqc" secondAttribute="trailing" id="uaJ-ly-2ay"/>
+                        <constraint firstItem="IEb-en-Nqc" firstAttribute="leading" secondItem="5bJ-7a-OmV" secondAttribute="leading" constant="20" symbolic="YES" id="vAZ-jx-ftq"/>
+                        <constraint firstAttribute="trailing" secondItem="1Sp-OH-mH2" secondAttribute="trailing" id="vaT-Z6-0UV"/>
+                        <constraint firstItem="gmL-ie-EwF" firstAttribute="height" secondItem="IEb-en-Nqc" secondAttribute="height" id="zie-7e-DN2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5bJ-7a-OmV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="5qw-CH-1G5"/>
+                <constraint firstAttribute="bottom" secondItem="0lK-Qf-d9x" secondAttribute="bottom" id="8se-LC-ymR"/>
+                <constraint firstAttribute="trailing" secondItem="0lK-Qf-d9x" secondAttribute="trailing" id="kB5-5R-uYm"/>
+                <constraint firstItem="0lK-Qf-d9x" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nRg-d7-szJ"/>
+                <constraint firstAttribute="trailing" secondItem="5bJ-7a-OmV" secondAttribute="trailing" constant="20" id="oAV-tP-tl4"/>
+                <constraint firstItem="5bJ-7a-OmV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="pVL-ul-ZLj"/>
+                <constraint firstItem="0lK-Qf-d9x" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sIW-se-oae"/>
+            </constraints>
+            <connections>
+                <outlet property="tfPassword" destination="gmL-ie-EwF" id="DCl-UM-q3k"/>
+                <outlet property="tfRedditName" destination="IEb-en-Nqc" id="YiC-Fd-nSW"/>
+                <outlet property="viewContent" destination="5bJ-7a-OmV" id="BLY-tx-Jvq"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_close" width="16" height="16"/>
+        <image name="ic_reddit_logo" width="72" height="72"/>
+    </resources>
+</document>
