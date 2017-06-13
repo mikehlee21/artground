@@ -376,7 +376,7 @@
 
 - (IBAction)actionBtnUpload:(id)sender {
     [self.view endEditing:YES];
-    _actionPhoto = [[UIActionSheet alloc]initWithTitle:@"Choose an action: " delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo",@"Choose from Library", nil];
+    _actionPhoto = [[UIActionSheet alloc]initWithTitle:@"Upload Artwork image" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo",@"Choose from Library", nil];
     [_actionPhoto showInView:self.view];
     
 }

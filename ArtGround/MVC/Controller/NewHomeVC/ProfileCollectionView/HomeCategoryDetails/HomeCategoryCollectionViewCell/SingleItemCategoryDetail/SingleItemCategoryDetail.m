@@ -96,7 +96,7 @@
     [self.view layoutIfNeeded];
     
     _viewProfilePic2.layer.cornerRadius = self.viewProfilePic.frame.size.width/2;
-    _viewProfilePic2.layer.borderColor = [[UIColor colorWithRed:255/255.f green:99/255.f blue:100/255.f alpha:1]CGColor];
+    _viewProfilePic2.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1]CGColor];
     _viewProfilePic2.layer.borderWidth = 3.0f;
     
     _imageViewProfilePic2.layer.borderWidth = 3.0f;
@@ -120,6 +120,7 @@
         [_btnEdit setTitle:@"" forState:UIControlStateNormal];
         [_btnEdit setTitle:@"" forState:UIControlStateSelected];
     }
+    
     
     [self.view setNeedsDisplay];
 }
@@ -370,6 +371,9 @@
     [self createDict];
     [VC getUserDetails:_dictArtist];
     [self.navigationController pushViewController:VC animated:YES];
+    }
+    else {
+        
     }
 }
 - (IBAction)actionBtnEdit:(id)sender {

@@ -37,12 +37,10 @@ static dispatch_once_t once;
 @property (weak, nonatomic) IBOutlet UIView *viewProfilePic;
 @property (weak, nonatomic) IBOutlet UIButton *btnCountry;
 @property (weak, nonatomic) IBOutlet UIButton *btnGender;
-@property (weak, nonatomic) IBOutlet UIButton *btnAboutMe;
-@property (strong, nonatomic) IBOutlet UIButton *btnPrivacyPolicy;
-- (IBAction)actionBtnBlockedUsers:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *tfPassword;
+@property (weak, nonatomic) IBOutlet UITextField *tfVerifyPwd;
 
-@property (strong, nonatomic) IBOutlet UIButton *btnAppAboutMe;
-@property (strong, nonatomic) IBOutlet UIButton *btnLogout;
+
 @property NSMutableDictionary *dictAPI;
 @property NSMutableDictionary *userDetails;
 @property NSMutableArray *arrCountry;
@@ -72,16 +70,12 @@ static dispatch_once_t once;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *scrollViewBottomConstraint;
 @property NSString *strShowCancel;
 
-- (IBAction)actionBtnLogout:(id)sender;
 
 - (IBAction)actionBtnGender:(id)sender;
-- (IBAction)actionBtnAboutMe:(id)sender;
 - (IBAction)actionBtnCountry:(id)sender;
 - (IBAction)actionBtnBack:(id)sender;
 - (IBAction)actionBtnSave:(id)sender;
 - (IBAction)actionBtnEditDisplay:(id)sender;
-- (IBAction)actionBtnAppAboutMe:(id)sender;
-- (IBAction)actionBtnPrivacyPolicy:(id)sender;
 
 
 @end

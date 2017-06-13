@@ -50,6 +50,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewProfilePic2;
 @property (strong, nonatomic) IBOutlet UIView *viewProfilePic2;
+@property (weak, nonatomic) IBOutlet UIButton *btnContact;
 
 @property SpinnerView *spinner;
 @property NSString *userID;
