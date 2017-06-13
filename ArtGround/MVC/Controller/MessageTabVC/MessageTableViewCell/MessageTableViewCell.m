@@ -19,7 +19,7 @@
     // Configure the view for the selected state
 }
 -(void)initialise{
-    _viewImage.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _viewImage.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1] CGColor];
     _viewImage.layer.borderWidth = 2.0;
     
     [self layoutIfNeeded];

@@ -12,6 +12,7 @@
 		0BDDCA671D5B9285005CB4EC /* ChatOtherMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDCA661D5B9285005CB4EC /* ChatOtherMessageCell.m */; };
 		0BDDCA6A1D5B9297005CB4EC /* ChatMyMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDCA691D5B9297005CB4EC /* ChatMyMessageCell.m */; };
 		1E05CDF1FAE94C8DBA2D8B8E /* libPods-ArtGround.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CCD4B45D6FC597C381C68E /* libPods-ArtGround.a */; };
+		62FFD3321EEED2FF0065BA98 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FFD3311EEED2FF0065BA98 /* SettingVC.m */; };
 		6E072DA81CAE941A0083AA69 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E072DA71CAE94190083AA69 /* Social.framework */; };
 		6E2057171C1AAD030016F1E2 /* PageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2057161C1AAD030016F1E2 /* PageController.m */; };
 		6E20571B1C1AAFFC0016F1E2 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20571A1C1AAFFC0016F1E2 /* CollectionViewCell.m */; };
@@ -179,6 +180,8 @@
 		0BDDCA691D5B9297005CB4EC /* ChatMyMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatMyMessageCell.m; path = ArtGround/MVC/Controller/MessageTabVC/MessageTableViewCell/ChatVC/ChatMyMessageCell/ChatMyMessageCell.m; sourceTree = SOURCE_ROOT; };
 		22CCD4B45D6FC597C381C68E /* libPods-ArtGround.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtGround.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40396AE4A2455419B996BB65 /* Pods-ArtGround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtGround.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtGround/Pods-ArtGround.release.xcconfig"; sourceTree = "<group>"; };
+		62FFD3301EEED2FF0065BA98 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		62FFD3311EEED2FF0065BA98 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		6E072DA71CAE94190083AA69 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6E2057151C1AAD030016F1E2 /* PageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageController.h; sourceTree = "<group>"; };
 		6E2057161C1AAD030016F1E2 /* PageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageController.m; sourceTree = "<group>"; };
@@ -447,6 +450,15 @@
 			name = Ressources;
 			sourceTree = "<group>";
 		};
+		62FFD32F1EEED2DF0065BA98 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				62FFD3301EEED2FF0065BA98 /* SettingVC.h */,
+				62FFD3311EEED2FF0065BA98 /* SettingVC.m */,
+			);
+			name = SettingVC;
+			sourceTree = "<group>";
+		};
 		640F4D8714858770634AA361 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +669,7 @@
 		6E3607DF1BE894360090B318 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				62FFD32F1EEED2DF0065BA98 /* SettingVC */,
 				6E6A390B1CABE8A0005D5DCC /* BlockedUserVC */,
 				6ECBB11C1C2545800054C7E9 /* TermsAndConditionsVC */,
 				6E2057141C1AACE20016F1E2 /* PageControl */,
@@ -1717,6 +1730,7 @@
 				6E8B46311C0588EC00077EF1 /* UserPaintingsVC.m in Sources */,
 				6E534A021BEB543D007F8A3F /* HomeVC.m in Sources */,
 				6E5349EC1BEB44E2007F8A3F /* HomeTabVC.m in Sources */,
+				62FFD3321EEED2FF0065BA98 /* SettingVC.m in Sources */,
 				6E7F4FC61C19584A00D4D97C /* FaceBookShareXib.m in Sources */,
 				6E5F59BC1C1071E4004C66C3 /* RedditVC.m in Sources */,
 				6E3607A91BE893FB0090B318 /* main.m in Sources */,
