@@ -11,6 +11,7 @@
 #import "HomeVC.h"
 #import "TopHomeVC.h"
 #import "ProfileHomeVC.h"
+#import "Macro.h"
 
 
 @interface HomeTabVC : UIViewController <UIPageViewControllerDataSource , UIPageViewControllerDelegate>

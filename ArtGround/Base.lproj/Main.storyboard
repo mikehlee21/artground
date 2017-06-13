@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="imF-Ou-llB">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="imF-Ou-llB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -189,20 +189,20 @@
             </objects>
             <point key="canvasLocation" x="376" y="-565"/>
         </scene>
-        <!--SettingVC-->
+        <!--SETTING-->
         <scene sceneID="6d4-vO-0hX">
             <objects>
                 <tableViewController storyboardIdentifier="SettingVC" id="nwR-ND-AYA" customClass="SettingVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Fh-Rm-Wf7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Fh-Rm-Wf7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="tsU-91-f13">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="dLb-Ad-vQG">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="921-BJ-cKf">
-                                    <rect key="frame" x="161" y="34" width="54" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MX3-Ou-hQB">
+                                    <rect key="frame" x="152" y="34" width="71" height="20"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -210,9 +210,8 @@
                             </subviews>
                             <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="921-BJ-cKf" secondAttribute="bottom" constant="10" id="0UF-sv-FQA"/>
-                                <constraint firstItem="921-BJ-cKf" firstAttribute="centerX" secondItem="tsU-91-f13" secondAttribute="centerX" id="Jpc-bf-bYb"/>
-                                <constraint firstAttribute="height" constant="64" id="dEg-RI-MBE"/>
+                                <constraint firstItem="MX3-Ou-hQB" firstAttribute="centerX" secondItem="dLb-Ad-vQG" secondAttribute="centerX" id="fLz-e2-U1V"/>
+                                <constraint firstAttribute="bottom" secondItem="MX3-Ou-hQB" secondAttribute="bottom" constant="10" id="y3X-Vo-dUG"/>
                             </constraints>
                         </view>
                         <sections>
@@ -396,11 +395,12 @@
                             <outlet property="delegate" destination="nwR-ND-AYA" id="kQ3-6l-E2X"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2c5-O4-5KJ"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="SETTING" id="2c5-O4-5KJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tez-jN-97e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2789.5999999999999" y="1650.224887556222"/>
+            <point key="canvasLocation" x="2833" y="1648"/>
         </scene>
         <!--Edit ProfileVC-->
         <scene sceneID="zTb-54-u3v">
@@ -782,7 +782,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzC-gq-rdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="1Vq-7Z-IoT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3468" y="1662.3688155922041"/>
+            <point key="canvasLocation" x="3959" y="1697"/>
         </scene>
         <!--Category TableVC-->
         <scene sceneID="3Qs-HX-8wG">
@@ -1137,7 +1137,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNITED STATES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSq-B6-BgS">
-                                                <rect key="frame" x="96" y="259.5" width="85" height="12"/>
+                                                <rect key="frame" x="96" y="260" width="85" height="12"/>
                                                 <fontDescription key="fontDescription" name="Omnes_GirlScouts-Medium" family="Omnes_GirlScouts" pointSize="12"/>
                                                 <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1179,7 +1179,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kathrine Coza" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkP-4y-MD7">
-                                                <rect key="frame" x="96" y="243" width="114" height="14.5"/>
+                                                <rect key="frame" x="96" y="243" width="114" height="15"/>
                                                 <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1538,6 +1538,7 @@
                                     <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQR-Yq-3iS">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.83529411764705885" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="tRe-fL-qUS" id="aEN-fc-QkH"/>
@@ -1686,7 +1687,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9S-yS-HyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="d5r-De-jia" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-716" y="2198"/>
+            <point key="canvasLocation" x="-721" y="2285"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="Q33-Gj-loj">
@@ -3733,6 +3734,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="btnBack" destination="bnK-9L-lE1" id="NCB-LW-vyD"/>
                         <outlet property="labelAlert" destination="CA1-6D-Rgk" id="BK3-WQ-EyP"/>
@@ -4244,8 +4246,8 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star_black" translatesAutoresizingMaskIntoConstraints="NO" id="XPn-bk-3Yq">
                                                             <rect key="frame" x="200" y="105" width="16" height="16"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVG-oF-a3e">
-                                                            <rect key="frame" x="53" y="22" width="246" height="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVG-oF-a3e">
+                                                            <rect key="frame" x="105" y="46" width="246" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="ktQ-So-Vay"/>
                                                             </constraints>
@@ -4253,8 +4255,8 @@
                                                             <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfe-0T-vZ5" customClass="JCTagListView">
-                                                            <rect key="frame" x="81" y="124" width="270" height="40"/>
+                                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfe-0T-vZ5" customClass="JCTagListView">
+                                                            <rect key="frame" x="81" y="121" width="270" height="40"/>
                                                             <color key="backgroundColor" red="0.83137254900000002" green="0.83529411760000005" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="2Fg-01-bK4"/>
@@ -4468,7 +4470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPf-SB-ohb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4087" y="1969"/>
+            <point key="canvasLocation" x="4553" y="1965"/>
         </scene>
         <!--Message-->
         <scene sceneID="5ru-iK-aW1">
@@ -4726,7 +4728,7 @@
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgr-JU-yeh">
-                                                <rect key="frame" x="109.5" y="197" width="181.5" height="40"/>
+                                                <rect key="frame" x="110" y="197" width="181" height="40"/>
                                                 <color key="textColor" red="0.97647058823529409" green="0.086274509803921567" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
@@ -4752,7 +4754,7 @@
                                                 <color key="backgroundColor" red="0.14117647059999999" green="0.16862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-VF-NMX">
-                                                <rect key="frame" x="86.5" y="297" width="204.5" height="40"/>
+                                                <rect key="frame" x="87" y="297" width="204" height="40"/>
                                                 <color key="textColor" red="0.97647058823529409" green="0.086274509803921567" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -4779,7 +4781,7 @@
                                                 <color key="backgroundColor" red="0.14117647059999999" green="0.16862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCY-Ck-f1f">
-                                                <rect key="frame" x="96.5" y="397" width="194.5" height="40"/>
+                                                <rect key="frame" x="97" y="397" width="194" height="40"/>
                                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                 <state key="normal">
                                                     <color key="titleColor" red="0.97647058823529409" green="0.086274509803921567" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4821,13 +4823,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn0-oo-25M">
-                                                <rect key="frame" x="40" y="172" width="35.5" height="15"/>
+                                                <rect key="frame" x="40" y="172" width="36" height="15"/>
                                                 <fontDescription key="fontDescription" name="Omnes_GirlScouts-Regular" family="Omnes_GirlScouts" pointSize="15"/>
                                                 <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kk-BK-DVm">
-                                                <rect key="frame" x="40" y="222" width="61.5" height="15"/>
+                                                <rect key="frame" x="40" y="222" width="62" height="15"/>
                                                 <fontDescription key="fontDescription" name="Omnes_GirlScouts-Regular" family="Omnes_GirlScouts" pointSize="15"/>
                                                 <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4842,7 +4844,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF9-v5-SZe">
-                                                <rect key="frame" x="40" y="322" width="38.5" height="15"/>
+                                                <rect key="frame" x="40" y="322" width="39" height="15"/>
                                                 <fontDescription key="fontDescription" name="Omnes_GirlScouts-Regular" family="Omnes_GirlScouts" pointSize="15"/>
                                                 <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4854,7 +4856,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqP-vS-oD8">
-                                                <rect key="frame" x="40" y="422" width="48.5" height="15"/>
+                                                <rect key="frame" x="40" y="422" width="49" height="15"/>
                                                 <fontDescription key="fontDescription" name="Omnes_GirlScouts-Regular" family="Omnes_GirlScouts" pointSize="15"/>
                                                 <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4891,7 +4893,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kJ3-Gy-vCJ">
-                                                <rect key="frame" x="83.5" y="147" width="207.5" height="40"/>
+                                                <rect key="frame" x="84" y="147" width="207" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Vdv-kb-0du"/>
                                                 </constraints>

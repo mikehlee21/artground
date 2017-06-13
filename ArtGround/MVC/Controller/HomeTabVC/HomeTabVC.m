@@ -136,6 +136,10 @@
     }];
 //    [_btnFollowing setSelected:YES];
 //    [_btnNearby setSelected:NO];
+    [_btnProfile setTitleColor:[UIColor colorWithRed:255/255.0f green:0/255.0f blue:90/255.0f alpha:1.0] forState:UIControlStateNormal];
+    [_btnTop setTitleColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0] forState:UIControlStateNormal];
+    [_btnHome setTitleColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0] forState:UIControlStateNormal];
+    
     _viewControllers = [[NSArray alloc]initWithObjects:_homeProfile, nil];
     [self.pageController setViewControllers:_viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
 }
@@ -146,6 +150,11 @@
   }];
     //    [_btnFollowing setSelected:YES];
     //    [_btnNearby setSelected:NO];
+    
+    [_btnTop setTitleColor:[UIColor colorWithRed:255/255.0f green:0/255.0f blue:90/255.0f alpha:1.0] forState:UIControlStateNormal];
+    [_btnProfile setTitleColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0] forState:UIControlStateNormal];
+    [_btnHome setTitleColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0] forState:UIControlStateNormal];
+    
     _viewControllers = [[NSArray alloc]initWithObjects:_homeTop, nil];
     [self.pageController setViewControllers:_viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
 
@@ -157,6 +166,11 @@
     //    [_btnFollowing setSelected:YES];
     //    [_btnNearby setSelected:NO];
       }];
+    
+    [_btnHome setTitleColor:[UIColor colorWithRed:255/255.0f green:0/255.0f blue:90/255.0f alpha:1.0] forState:UIControlStateNormal];
+    [_btnProfile setTitleColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0] forState:UIControlStateNormal];
+    [_btnTop setTitleColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0] forState:UIControlStateNormal];
+    
     _viewControllers = [[NSArray alloc]initWithObjects:_home, nil];
     [self.pageController setViewControllers:_viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
 }

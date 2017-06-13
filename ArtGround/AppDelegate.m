@@ -22,7 +22,7 @@
      [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     //Tabbar
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:46/255.f green:46/255.f blue:46/255.f alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:40/255.f green:40/255.f blue:40/255.f alpha:1]];
 
         //Login with Gmail
     [Fabric with:@[[Crashlytics class]]];

@@ -48,7 +48,7 @@
     
     _imageViewProflePic.layer.cornerRadius = self.imageViewProflePic.frame.size.width/2;
     _imageViewProflePic.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1]CGColor];
-    _imageViewProflePic.layer.borderWidth = 3.0f;
+    _imageViewProflePic.layer.borderWidth = 10.0f;
     
     _strAboutme = @"Kunal Gupta";
     _userDetails = [[NSUserDefaults standardUserDefaults] valueForKey:UD_USER_INFO];
@@ -147,7 +147,7 @@
     [self.view setUserInteractionEnabled:YES];
     NSLog(@"%@",[noti.userInfo valueForKey:@"text"]);
     _strAboutme = [noti.userInfo valueForKey:@"text"];
-    [_btnAboutMe setTitle:_strAboutme forState:UIControlStateNormal];
+    //[_btnAboutMe setTitle:_strAboutme forState:UIControlStateNormal];
     [self.view endEditing:YES];
 }
 -(void)startSpinner{

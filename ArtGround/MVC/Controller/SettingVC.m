@@ -48,7 +48,7 @@
         [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"BlockedUserVC"] animated:YES];
     } else if([indexPath row] == 2) {
         TermsAndConditionsVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"TermsAndConditionsVC"];
-        [self presentViewController:VC animated:YES completion:nil];
+        [self.navigationController pushViewController:VC animated:YES];
     }
     
 }

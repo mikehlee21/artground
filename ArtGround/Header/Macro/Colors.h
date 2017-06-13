@@ -11,7 +11,8 @@
 @interface Colors : NSObject
 
 //#define kAppColor [UIColor colorWithRed:249/255.f green:22/255.f blue:73/255.f alpha:1];
-#define kAppColor [UIColor colorWithRed:255/255.f green:99/255.f blue:100/255.f alpha:1];
+#define kAppColor [UIColor colorWithRed:40/255.f green:40/255.f blue:40/255.f alpha:1];
+#define kSelColor [UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1];
 #define KGrayBorder [[UIColor colorWithRed:204/255.f green:205/255.f blue:206/255.f alpha:1]CGColor]
 #define klightGray [UIColor colorWithRed:100/255.f green:100/255.f blue:100/255.f alpha:1];
 #define kdarkGray [UIColor colorWithRed:70/255.f green:70/255.f blue:70/255.f alpha:1];

@@ -49,7 +49,8 @@
 #pragma mark - ACTION BUTTONS
 
 - (IBAction)actionBtnBack:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 @end

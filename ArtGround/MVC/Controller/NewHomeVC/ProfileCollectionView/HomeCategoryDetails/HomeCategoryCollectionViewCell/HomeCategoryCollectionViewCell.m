@@ -13,7 +13,7 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     _labelName.textColor = klightGray;
-    _labelPrice.textColor = kAppColor;
+    _labelPrice.textColor = kSelColor;
     _labelTitle.textColor = klightGray;
     _viewContent.layer.cornerRadius = 4.0;
     self.layer.cornerRadius = 4.0;
