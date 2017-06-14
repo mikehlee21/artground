@@ -133,8 +133,8 @@
     [_imageViewProfilePic setClipsToBounds:YES];
     _viewContent.layer.cornerRadius = _viewContent.frame.size.width/2;
     [_viewContent setClipsToBounds:YES];
-    _viewContent.layer.borderColor = KGrayBorder;
-    _viewContent.layer.borderWidth = 2.5;
+    _viewContent.layer.borderColor = ;
+    _viewContent.layer.borderWidth = 3;
     //should be FranklinGothic Medium!
     
     _labelName.font = [UIFont fontWithName:@"FranklinGothic-Medium" size:18.0];
