@@ -113,6 +113,8 @@
     if([userID isEqualToString:_hm.strUserID]){
 //        [_btnEdit setHidden:NO];
         [_btnEdit setSelected:NO];
+        [_btnContact setImage:NULL forState:UIControlStateNormal];
+        [_btnContact setTitle:@"MARK AS SOLD" forState:UIControlStateNormal];
     }
     else{
 //        [_btnEdit setHidden:YES];
@@ -358,11 +360,25 @@
 //    //    [about setStr2:@"dcsjadjakshdfjasdhfjkashbdfjasbdhjkfasdbc dsahd sabusad fbsjf asj basjba jdkfbsakjdfbsakj fasjdf sajdf nasjfnasjfnasdjfnadsjfnasj dfdasjfasdhfj adsfnas'f"];
 //    [[[[UIApplication sharedApplication] delegate] window] addSubview:fb];
    
-    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-    content.imageURL = [NSURL URLWithString:_hm.strPostImage];
-    content.contentTitle = _hm.strTitle;
-    content.contentDescription = _hm.strDescription;
-    [FBSDKShareDialog showFromViewController:self withContent:content delegate:nil];
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Share it with your friends." message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Copy Picture URL" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Share on Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+        content.imageURL = [NSURL URLWithString:_hm.strPostImage];
+        content.contentTitle = _hm.strTitle;
+        content.contentDescription = _hm.strDescription;
+        [FBSDKShareDialog showFromViewController:self withContent:content delegate:nil];
+    }]];
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 - (IBAction)actionBtnContactSeller:(id)sender{

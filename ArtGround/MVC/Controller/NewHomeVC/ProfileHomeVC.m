@@ -133,7 +133,7 @@
     [_imageViewProfilePic setClipsToBounds:YES];
     _viewContent.layer.cornerRadius = _viewContent.frame.size.width/2;
     [_viewContent setClipsToBounds:YES];
-    _viewContent.layer.borderColor = ;
+    _viewContent.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1] CGColor];
     _viewContent.layer.borderWidth = 3;
     //should be FranklinGothic Medium!
     

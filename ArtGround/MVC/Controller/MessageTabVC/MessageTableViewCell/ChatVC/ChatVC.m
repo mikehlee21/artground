@@ -88,10 +88,10 @@
     _labelName.text = _artistName;
 //    [_imageViewProfilePic sd_setImageWithURL:[NSURL URLWithString:_artistImage] placeholderImage:kDefaultPic];
 
-    _viewMessage.layer.borderColor = [[UIColor colorWithRed:255/255.f green:99/255.f blue:100/255.f alpha:1]CGColor] ;
-    _viewMessage.layer.borderWidth = 2.0;
-    _viewMessage.layer.cornerRadius = 4.0;
-    _viewContent.backgroundColor = [UIColor whiteColor];
+    //_viewMessage.layer.borderColor = [[UIColor colorWithRed:255/255.f green:99/255.f blue:100/255.f alpha:1]CGColor] ;
+    //_viewMessage.layer.borderWidth = 2.0;
+    _viewMessage.layer.cornerRadius = 5.0;
+    //_viewContent.backgroundColor = [UIColor whiteColor];
     
     _labelPlaceholder = [[UILabel alloc] init];
     [_labelPlaceholder.font fontWithSize:10.0f];
@@ -415,15 +415,17 @@
                 }
             }
             
+            myMessage.viewMyMessage.layer.cornerRadius = 10.0;
+            myMessage.labelMyMessage.text = cm.strMessage;
+            myMessage.labelDate.text = cm.strDate;
+            
+            /*
             myMessage.viewMyMessage.backgroundColor = [UIColor whiteColor];
-            myMessage.viewMyMessage.layer.cornerRadius = 4.0;
             myMessage.viewMyMessage.layer.borderColor = [[UIColor colorWithRed:255/255.f green:99/255.f blue:100/255.f alpha:1] CGColor];
             myMessage.viewMyMessage.layer.borderWidth = 2.0;
             myMessage.labelMyMessage.textColor = kAppColor;
             myMessage.labelMyMessage.font = [UIFont fontWithName:@"MyriadPro-Regular" size:15.0];
-            myMessage.labelMyMessage.text = cm.strMessage;
-            myMessage.labelDate.text = cm.strDate;
-            
+            */
             return myMessage;
         }
     }
@@ -472,13 +474,16 @@
                     otherMessage.heightViewdate.constant = 24;
                 }
             }
-            otherMessage.viewOtherMessage.backgroundColor = kAppColor;
-            otherMessage.viewOtherMessage.layer.cornerRadius = 4.0;
-            otherMessage.labelOtherMessage.textColor = [UIColor whiteColor];
-            otherMessage.labelOtherMessage.font = [UIFont fontWithName:@"MyriadPro-Regular" size:15.0];
+            
+            otherMessage.viewOtherMessage.layer.cornerRadius = 10.0;
             otherMessage.labelOtherMessage.text = cm.strMessage;
             otherMessage.labelDate.text = cm.strDate;
             
+            /*
+            otherMessage.viewOtherMessage.backgroundColor = kAppColor;
+            otherMessage.labelOtherMessage.textColor = [UIColor whiteColor];
+            otherMessage.labelOtherMessage.font = [UIFont fontWithName:@"MyriadPro-Regular" size:15.0];
+            */
             return otherMessage;
         }
     }

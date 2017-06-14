@@ -11,9 +11,9 @@
 @implementation ChatMyMessageCell
 
 - (void)awakeFromNib {
-    _viewDate.layer.cornerRadius = 4.0;
-    [_viewDate setClipsToBounds:YES];
-        _viewDate.backgroundColor = kAppColor;
+    //_viewDate.layer.cornerRadius = 4.0;
+    //[_viewDate setClipsToBounds:YES];
+    //_viewDate.backgroundColor = kAppColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

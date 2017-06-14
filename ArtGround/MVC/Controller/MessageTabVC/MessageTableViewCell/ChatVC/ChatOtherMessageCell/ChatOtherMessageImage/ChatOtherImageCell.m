@@ -14,9 +14,9 @@
     
     _tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tappedTableView:)];
     [_imageViewMessage addGestureRecognizer:_tapGesture];
-    _viewDate.layer.cornerRadius = 4.0;
-    [_viewDate setClipsToBounds:YES];
-        _viewDate.backgroundColor = kAppColor;
+    //_viewDate.layer.cornerRadius = 4.0;
+    //[_viewDate setClipsToBounds:YES];
+    //_viewDate.backgroundColor = kAppColor;
     
 }
 
