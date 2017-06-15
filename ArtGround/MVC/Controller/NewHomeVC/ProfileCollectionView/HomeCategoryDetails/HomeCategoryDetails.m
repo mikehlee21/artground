@@ -189,7 +189,7 @@
     
     HomeCategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCategoryCollectionViewCell" forIndexPath:indexPath];
 //    cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
-    
+/*
     if ( !hm.strArtistName.length ) {
     
         cell.labelName.text = @"no data";
@@ -197,7 +197,7 @@
     
         cell.labelName.text = hm.strArtistName;
     }
-    
+*/    
     if ( !hm.strPrice.length ) {
         
         cell.labelPrice.text = @"no data";
@@ -215,11 +215,19 @@
         cell.labelTitle.text = hm.strTitle;
     }
     
+    if ([hm.isFavorite integerValue] == 0) {
+        cell.btnFavorite.selected = NO;
+    } else {
+        cell.btnFavorite.selected = YES;
+    }
+    
 //    cell.labelName.text = hm.strArtistName;
 //    cell.labelPrice.text = [NSString stringWithFormat:@"$%@",hm.strPrice];
 //    cell.labelTitle.text = hm.strTitle;
 
      [cell.imageViewPost sd_setImageWithURL:[NSURL URLWithString:hm.strPostImage]];
+    
+    cell.hm = hm;
    
     return cell;
 }
@@ -241,7 +249,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     CGRect frame = [[UIScreen mainScreen] bounds];
-    return CGSizeMake((frame.size.width - 26) / 2 , (frame.size.width -  26 )/2);
+    return CGSizeMake((frame.size.width - 26) / 2 , 221);
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -140,13 +140,20 @@
 -(UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HomeModel *hm = [_arrTableData objectAtIndex:indexPath.row];
     
-    SearchArtCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SearchArtCollectionViewCell" forIndexPath:indexPath];
+    HomeCategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCategoryCollectionViewCell" forIndexPath:indexPath];
     //    cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
-    cell.labelName.text = hm.strArtistName;
     cell.labelPrice.text = [NSString stringWithFormat:@"$%@",hm.strPrice];
     cell.labelTitle.text = hm.strTitle;
     
     [cell.imageViewPost sd_setImageWithURL:[NSURL URLWithString:hm.strPostImage]];
+    
+    if ([hm.isFavorite integerValue] == 0) {
+        cell.btnFavorite.selected = NO;
+    } else {
+        cell.btnFavorite.selected = YES;
+    }
+    
+    cell.hm = hm;
     
     return cell;
 }
@@ -154,7 +161,7 @@
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
     [self.view layoutIfNeeded];
     [self.view setNeedsDisplay];
-    SearchArtCollectionViewCell *cell1 = (SearchArtCollectionViewCell *) cell;
+    HomeCategoryCollectionViewCell *cell1 = (HomeCategoryCollectionViewCell *) cell;
     
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:cell1.viewContent.bounds];
     [cell.layer setMasksToBounds:NO];
@@ -168,7 +175,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CGRect frame = [[UIScreen mainScreen] bounds];
-    return CGSizeMake((frame.size.width - 26) / 2 , (frame.size.width -  26 )/2);
+    return CGSizeMake((frame.size.width - 26) / 2 , 221);
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

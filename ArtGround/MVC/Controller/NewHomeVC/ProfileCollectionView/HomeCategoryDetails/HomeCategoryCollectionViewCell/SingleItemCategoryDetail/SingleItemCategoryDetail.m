@@ -77,6 +77,7 @@
     _labelPrice.text = [NSString stringWithFormat:@"$%@",_hm.strPrice];
     _labelInfo.text = [_hm.strDescription uppercaseString];
     _labelTitle.text = _hm.strTitle;
+    _lblTitle.text = _hm.strTitle;
     _labelCountry.text = [_hm.strArtistCountry uppercaseString];
     _labelName.font = [UIFont fontWithName:@"Gotham bold" size:15.0];
     _labelName.textColor = [UIColor colorWithRed:68/255.0 green:68/255.0 blue:68/255.0 alpha:1.0];
@@ -96,12 +97,12 @@
     [self.view layoutIfNeeded];
     
     _viewProfilePic2.layer.cornerRadius = self.viewProfilePic.frame.size.width/2;
-    _viewProfilePic2.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1]CGColor];
+    _viewProfilePic2.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1] CGColor];
     _viewProfilePic2.layer.borderWidth = 3.0f;
     
     _imageViewProfilePic2.layer.borderWidth = 3.0f;
     _imageViewProfilePic2.layer.cornerRadius = 30.0f;
-    _imageViewProfilePic2.layer.borderColor = [[UIColor colorWithRed:255/255.f green:99/255.f blue:100/255.f alpha:1]CGColor];
+    _imageViewProfilePic2.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1]CGColor];
     [_imageViewProfilePic2 setClipsToBounds:YES];
     [_imageViewProfilePic2.layer setMasksToBounds:YES];
     
@@ -367,7 +368,8 @@
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Copy Picture URL" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = _hm.strPostImage;
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Share on Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -383,13 +385,27 @@
 
 - (IBAction)actionBtnContactSeller:(id)sender{
     if(![_userID isEqualToString:_hm.strUserID]){
-    ChatVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatVC"];
-    [self createDict];
-    [VC getUserDetails:_dictArtist];
-    [self.navigationController pushViewController:VC animated:YES];
+        ChatVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatVC"];
+        [self createDict];
+        [VC getUserDetails:_dictArtist];
+        [self.navigationController pushViewController:VC animated:YES];
     }
     else {
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Happy that you sold it?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+        }]];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Mark as Sold" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            
+        }]];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove Listing" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+        }]];
+        
+        [self presentViewController:actionSheet animated:YES completion:nil];
     }
 }
 - (IBAction)actionBtnEdit:(id)sender {

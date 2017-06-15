@@ -16,6 +16,7 @@
 #define KGrayBorder [[UIColor colorWithRed:204/255.f green:205/255.f blue:206/255.f alpha:1]CGColor]
 #define klightGray [UIColor colorWithRed:100/255.f green:100/255.f blue:100/255.f alpha:1];
 #define kdarkGray [UIColor colorWithRed:70/255.f green:70/255.f blue:70/255.f alpha:1];
+#define ksuperLightGray [UIColor colorWithRed:199/255.f green:199/255.f blue:205/255.f alpha:1];
 #define kframe [[UIScreen mainScreen] bounds].size
 #define kWindow [[[UIApplication sharedApplication] delegate] window]
 #define kDefaultPic [UIImage imageNamed:@"ic_placeholder"]

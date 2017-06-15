@@ -11,6 +11,7 @@
 #import "SearchModel.h"
 #import "HomeModel.h"
 #import "SearchArtCollectionViewCell.h"
+#import "HomeCategoryCollectionViewCell.h"
 #import "SingleItemCategoryDetail.h"
 #import "SpinnerView.h"
 

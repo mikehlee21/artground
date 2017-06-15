@@ -20,7 +20,7 @@
 }
 -(void)initialise{
     _viewImage.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1] CGColor];
-    _viewImage.layer.borderWidth = 2.0;
+    _viewImage.layer.borderWidth = 3.0;
     
     [self layoutIfNeeded];
     

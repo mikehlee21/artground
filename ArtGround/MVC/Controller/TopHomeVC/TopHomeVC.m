@@ -116,11 +116,18 @@
 
     
     HomeModel *hm = [_arrTableData objectAtIndex:indexPath.row + _topPages];
-    cell.labelName.text = hm.strArtistName;
     cell.labelPrice.text = [NSString stringWithFormat:@"$%@",hm.strPrice];
     cell.labelTitle.text = hm.strTitle;
     
     [cell.imageViewPost sd_setImageWithURL:[NSURL URLWithString:hm.strPostImage] placeholderImage:[UIImage imageNamed:@"img_default"]];
+    
+    if ([hm.isFavorite integerValue] == 0) {
+        cell.btnFavorite.selected = NO;
+    } else {
+        cell.btnFavorite.selected = YES;
+    }
+    
+    cell.hm = hm;
     //[cell.imageViewPost sd_setImageWithURL:[NSURL URLWithString:hm.strPostImage]];
         return cell;
 }
@@ -146,7 +153,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CGRect frame = [[UIScreen mainScreen] bounds];
-    return CGSizeMake((frame.size.width - 26) / 2 , (frame.size.width -  26 )/2);
+    return CGSizeMake((frame.size.width - 26) / 2 , 221);
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
