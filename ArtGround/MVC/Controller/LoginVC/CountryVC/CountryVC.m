@@ -26,20 +26,20 @@
 }
 #pragma mark - self made
 -(void)initialize{
-    self.searchBar.tintColor = [UIColor redColor];
-    _searchBar.backgroundColor = kAppColor;
+    //self.searchBar.tintColor = [UIColor redColor];
     
     // change search bar Outer border color to clear color
-    
+    /*
     [[UISearchBar appearance] setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     [[UISearchBar appearance] setImage:[UIImage imageNamed:@"ic_search_bar"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [[UISearchBar appearance] setImage:[UIImage imageNamed:@"ic_cross"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
-    
+    */
     // Setting up Search Text Field UI
     UITextField *txfSearchField = [_searchBar valueForKey:@"_searchField"];
     txfSearchField.backgroundColor = [UIColor colorWithRed:213/255.f green:213/255.f blue:213/255.f alpha:1];
     txfSearchField.textColor = [UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1];
     [txfSearchField setValue:[UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    
     
     _tableViewCountry.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     

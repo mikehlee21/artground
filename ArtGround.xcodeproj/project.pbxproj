@@ -30,7 +30,6 @@
 		6E3607AC1BE893FB0090B318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3607AB1BE893FB0090B318 /* AppDelegate.m */; };
 		6E3607B21BE893FB0090B318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E3607B01BE893FB0090B318 /* Main.storyboard */; };
 		6E3607B51BE893FB0090B318 /* ArtGround.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3607B31BE893FB0090B318 /* ArtGround.xcdatamodeld */; };
-		6E3607B71BE893FB0090B318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E3607B61BE893FB0090B318 /* Assets.xcassets */; };
 		6E3607BA1BE893FB0090B318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E3607B81BE893FB0090B318 /* LaunchScreen.storyboard */; };
 		6E3607C51BE893FB0090B318 /* ArtGroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3607C41BE893FB0090B318 /* ArtGroundTests.m */; };
 		6E3607D01BE893FB0090B318 /* ArtGroundUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3607CF1BE893FB0090B318 /* ArtGroundUITests.m */; };
@@ -149,6 +148,7 @@
 		6ECBB1271C2558E60054C7E9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECBB1261C2558E60054C7E9 /* Reachability.m */; };
 		A110A6191CFEA3BF004688A0 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A110A6171CFEA3BF004688A0 /* Fabric.framework */; };
 		A110A61A1CFEA3BF004688A0 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A110A6181CFEA3BF004688A0 /* Crashlytics.framework */; };
+		B37B8C141EF204FC0022833F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37B8C131EF204FC0022833F /* Assets.xcassets */; };
 		ED1A69FD1DE0D8C100137D3F /* AboutMeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1A69FB1DE0D8C100137D3F /* AboutMeDetails.m */; };
 		ED1A6A001DE0D93300137D3F /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A69FF1DE0D93300137D3F /* RatingView.xib */; };
 		ED1A6A021DE0D95C00137D3F /* AboutMeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A6A011DE0D95C00137D3F /* AboutMeView.xib */; };
@@ -212,7 +212,6 @@
 		6E3607AB1BE893FB0090B318 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ArtGround/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		6E3607B11BE893FB0090B318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E3607B41BE893FB0090B318 /* ArtGround.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ArtGround.xcdatamodel; sourceTree = "<group>"; };
-		6E3607B61BE893FB0090B318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		6E3607B91BE893FB0090B318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E3607BB1BE893FB0090B318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E3607C01BE893FB0090B318 /* ArtGroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtGroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -403,6 +402,7 @@
 		97C5B7661E6948D100C25E05 /* ArtGround.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtGround.entitlements; sourceTree = "<group>"; };
 		A110A6171CFEA3BF004688A0 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A110A6181CFEA3BF004688A0 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		B37B8C131EF204FC0022833F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1A69FA1DE0D8C100137D3F /* AboutMeDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutMeDetails.h; path = ArtGround/MVC/View/AboutMeView/AboutMeDetails.h; sourceTree = SOURCE_ROOT; };
 		ED1A69FB1DE0D8C100137D3F /* AboutMeDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutMeDetails.m; path = ArtGround/MVC/View/AboutMeView/AboutMeDetails.m; sourceTree = SOURCE_ROOT; };
 		ED1A69FF1DE0D93300137D3F /* RatingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingView.xib; sourceTree = "<group>"; };
@@ -619,6 +619,7 @@
 			isa = PBXGroup;
 			children = (
 				97C5B7661E6948D100C25E05 /* ArtGround.entitlements */,
+				B37B8C131EF204FC0022833F /* Assets.xcassets */,
 				6E3607FD1BE8A1130090B318 /* Header */,
 				6E3607DD1BE894250090B318 /* MVC */,
 				6E3607B31BE893FB0090B318 /* ArtGround.xcdatamodeld */,
@@ -709,7 +710,6 @@
 				6E4B9C221BECB22B00E2AD9A /* SpinnerView */,
 				6E4B9C211BECB21D00E2AD9A /* AboutMeDetails */,
 				6E3607B01BE893FB0090B318 /* Main.storyboard */,
-				6E3607B61BE893FB0090B318 /* Assets.xcassets */,
 				6E3607B81BE893FB0090B318 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -1593,6 +1593,7 @@
 				6E9B10E71C09F53200BA6379 /* MuseoSansCyrl.otf in Resources */,
 				6E7F4FDE1C19983000D4D97C /* Omnes_GirlScouts-Regular.otf in Resources */,
 				6E7F4FE61C19983000D4D97C /* Omnes_GirlScouts-ExtraLight.otf in Resources */,
+				B37B8C141EF204FC0022833F /* Assets.xcassets in Resources */,
 				6E3607BA1BE893FB0090B318 /* LaunchScreen.storyboard in Resources */,
 				6E7F4FDA1C19983000D4D97C /* Omnes_GirlScouts-Thin.otf in Resources */,
 				6E7F4FE81C19983000D4D97C /* Omnes_GirlScouts-Bold.otf in Resources */,
@@ -1601,7 +1602,6 @@
 				6E9B10D41C09F34700BA6379 /* ic_AG_LOGO_LAUNCH.png in Resources */,
 				6E7F4FEA1C19983000D4D97C /* Omnes_GirlScouts-Black.otf in Resources */,
 				6E7F4FE51C19983000D4D97C /* Omnes_GirlScouts-ExtraLightItalic.otf in Resources */,
-				6E3607B71BE893FB0090B318 /* Assets.xcassets in Resources */,
 				0BDDCA641D5B9104005CB4EC /* franklin-gothic-medium.ttf in Resources */,
 				6E3607B21BE893FB0090B318 /* Main.storyboard in Resources */,
 				6E9B10D61C09F34700BA6379 /* ic_AG_LOGO_LAUNCH@3x.png in Resources */,

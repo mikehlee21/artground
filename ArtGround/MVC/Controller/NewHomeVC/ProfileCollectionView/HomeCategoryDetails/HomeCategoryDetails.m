@@ -40,11 +40,12 @@
     _labelCategoryName.textColor = kSelColor;
     _viewTop.backgroundColor = kAppColor;
 
+
     // change search bar Outer border color to clear color
-    
+    /*
     [[UISearchBar appearance] setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     [[UISearchBar appearance] setImage:[UIImage imageNamed:@"ic_search_bar"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
-    UITextField *txfSearchField = [_searchBarBetaX valueForKey:@"_searchField"];
+    [[UISearchBar appearance] setImage:[UIImage imageNamed:@"ic_cross"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
     
     UIImage *whatSearchImage = [UIImage imageNamed:@"icon_search.png"];
     UIImageView *whatSearchView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
@@ -52,16 +53,16 @@
     whatSearchView.tintColor = [UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1];
     txfSearchField.leftViewMode = UITextFieldViewModeAlways;
     txfSearchField.leftView = whatSearchView;
-    
-    
-    [[UISearchBar appearance] setImage:[UIImage imageNamed:@"ic_cross"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
+     
+    */
+    UITextField *txfSearchField = [_searchBarBetaX valueForKey:@"_searchField"];
     
     // Setting up Search Text Field UI
-    
-    
+        
     txfSearchField.backgroundColor = [UIColor colorWithRed:213/255.f green:213/255.f blue:213/255.f alpha:1];
     txfSearchField.textColor = [UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1];
     [txfSearchField setValue:[UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+     
 //    [self setSearchIcon];
 }
 
