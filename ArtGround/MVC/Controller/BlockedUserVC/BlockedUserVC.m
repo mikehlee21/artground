@@ -141,7 +141,17 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self unblockUser:indexPath];
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Share it with your friends." message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+        }]];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove user from blocked list" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self unblockUser:indexPath];
+        }]];
+        
+        [self presentViewController:actionSheet animated:YES completion:nil];
     }
 }
 
