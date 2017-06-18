@@ -34,7 +34,7 @@
     }
     
     if(_dictArtist){
-        if([[_dictArtist valueForKey:@"id" ] isEqualToString:_userID]){
+        if([[_dictArtist valueForKey:@"id" ] integerValue] == [_userID integerValue]){
             [self initialise];
             
             _strPaintingForID = _userID;
@@ -58,6 +58,12 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void)startSpinner{
+    _spinner  = [[SpinnerView alloc]initWithFrame:CGRectMake(0, 0, kframe.width, kframe.height) andColor:[UIColor whiteColor]];
+    [kWindow addSubview:_spinner];
+    [_spinner startLoader];
 }
 
 #pragma mark - Self made
@@ -160,58 +166,77 @@
         [super showAlert:@"Please Check your internet connection"];
     }
     else{
-    SpinnerView *spinner = [[SpinnerView alloc]initWithFrame:CGRectMake(0, 0, kframe.width, kframe.height) andColor:[UIColor whiteColor]];
+        [self startSpinner];
     
         dispatch_once(&once, ^{
             //    [[[[UIApplication sharedApplication] delegate] window] addSubview:spinner];
 //        [self.view addSubview:spinner];
-            [spinner startLoader];
     });
 
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
     [dict setObject:_accessToken forKey:@"access_token"];
+        
+        
+        
     UserProfileModel *model = [[UserProfileModel alloc]init];
     [model userDetails:_strPaintingForID :dict :^(NSDictionary *response_success) {
         NSLog(@"%@",response_success);
         if([[response_success valueForKey:@"success"] integerValue] == 1){
-        [_collectionView setHidden:NO];
-        [spinner stopLoader];
-        [spinner removeFromSuperview];
-        _dictUser = [response_success valueForKey:@"user"];
-        _arrTableData = [[NSMutableArray alloc]init];
-        _arrTableData = [[HomeModel parseDataToArray:[response_success valueForKey:@"arts"]]mutableCopy];
-        _labelAboutMe.text = [response_success valueForKey:@"about"];
-            if(_dictArtist){
-                if(![[_dictArtist valueForKey:@"id" ] isEqualToString:_userID]){
+            [_collectionView setHidden:NO];
+            [_spinner stopLoader];
+            [_spinner removeFromSuperview];
+            _dictUser = [response_success valueForKey:@"user"];
+            _arrTableData = [[NSMutableArray alloc]init];
+            _arrTableData = [[HomeModel parseDataToArray:[response_success valueForKey:@"arts"]]mutableCopy];
+            _labelAboutMe.text = [response_success valueForKey:@"about"];
+            
+            _totalPosts = [[response_success valueForKey:@"art_count"]integerValue];
+            
+            if(_dictArtist) {
+                if([[_dictArtist valueForKey:@"id" ] integerValue] != [_userID integerValue]){
                     
                     [self initializeUser];
                     [self setAboutMeAlignment];
                 }
             }
-            else{
+            else {
                _labelAboutMe.text = [response_success valueForKeyPath:@"user.about"];
                _labelCountry.text = [response_success valueForKeyPath:@"user.artist_country"];
                _labelGender.text = [response_success valueForKeyPath:@"user.gender"];
                [self initialise];
             }
             
-        [self setUpUI];
-        [self setAboutMeAlignment];
-        _totalPosts = [[response_success valueForKey:@"art_count"]integerValue];
+            [self setUpUI];
+            [self setAboutMeAlignment];
 
         }
         else{
+            [_spinner stopLoader];
+            [_spinner removeFromSuperview];
             [_collectionView setHidden:YES];
             _labelAlert.text = @"No arts added yet.";
+            [_labelAlert setHidden:YES];
         }
-        } :^(NSError *response_error) {
-        [spinner stopLoader];
-        [spinner removeFromSuperview];
+    } :^(NSError *response_error) {
+        [_spinner stopLoader];
+        [_spinner removeFromSuperview];
         [_collectionView setHidden:YES];
         _labelAlert.text = @"Something went wrong.";
+        [_labelAlert setHidden:YES];
         NSLog(@"%@",response_error);
     }];
     }
+    
+    NSString *accessToken = TOKEN;
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+    [dict setObject:accessToken forKey:@"access_token"];
+    PostActivityModel *model = [[PostActivityModel alloc]init];
+    [model getFavoritesUser:[_dictArtist valueForKey:@"id" ] :dict :^(NSDictionary *response_success) {
+        _labelFavoriteCnt.text = [NSString stringWithFormat:@"%@",[response_success objectForKey:@"msg"]];
+    } :^(NSError *response_error) {
+        NSLog(@"%@",response_error);
+    }];
+    
 }
 
 -(void)setUpUI{
@@ -226,6 +251,8 @@
     else{
         _collectionViewHeightConstraint.constant = (numberOfRows + 1) *((frame.size.width - 16 ) / 3);
     }
+    
+    _labelForSale.text = [NSString stringWithFormat:@"%ld",(long)_totalPosts];
     
     [_collectionView reloadData];
 }
@@ -271,7 +298,7 @@
     
     cell.postID = hm.strArtID;
     [cell.imageViewPost sd_setImageWithURL:[NSURL URLWithString:hm.strPostImage]];
-    if([_userID isEqualToString:hm.strUserID]){
+    if([_userID integerValue] == [hm.strUserID integerValue]){
         [cell.btnDelete setHidden:NO];
     }
     else{

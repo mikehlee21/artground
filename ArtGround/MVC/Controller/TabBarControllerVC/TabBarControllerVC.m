@@ -111,7 +111,7 @@
 //    MessageTabVC *VC;
 //    [VC initializeAPI];
     
-    if(![[noti.userInfo valueForKeyPath:@"aps.alert.loc-args.s_id"] isEqualToString:_otherUserID]){
+    if([[noti.userInfo valueForKeyPath:@"aps.alert.loc-args.s_id"] integerValue] == [_otherUserID integerValue]){
     
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);

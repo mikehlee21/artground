@@ -19,6 +19,7 @@
 #import <UIImageView+WebCache.h>
 #import "PostActivityModel.h"
 #import "BaseVC.h"
+#import "SpinnerView.h"
 
 static dispatch_once_t once;
 
@@ -32,6 +33,8 @@ static dispatch_once_t once;
 @property (weak, nonatomic) IBOutlet UILabel *labelGender;
 @property (weak, nonatomic) IBOutlet UIButton *btnEditProfile;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *collectionViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *labelForSale;
+@property (weak, nonatomic) IBOutlet UILabel *labelFavoriteCnt;
 
 
 @property (strong, nonatomic) IBOutlet UIView *viewTop;
@@ -55,6 +58,7 @@ static dispatch_once_t once;
 @property HomeModel *hm;
 @property NSString *strPaintingForID;
 @property NSMutableDictionary *dictArtist;
+@property SpinnerView *spinner;
 -(void)pathFrm :(NSString *)path;
 -(void)getArtistDetails:(NSMutableDictionary *)dict;
 - (IBAction)actionBtnLogout:(id)sender;

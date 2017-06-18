@@ -92,6 +92,10 @@
     else{
            [_btnFavorite setSelected:YES];
     }
+    
+    if ([_hm.isSold integerValue] == 0) {
+        
+    }
     _imageViewHeightConstraint.constant = kframe.width - 40;
     
     [self.view layoutIfNeeded];
@@ -110,8 +114,7 @@
 
 //    _fbShareText =[NSString stringWithFormat:@"Title :%@ \n Price: %@ \n Description: %@ ", _hm.strTitle , _hm.strPrice, _hm.strDescription];
     
-    NSString *userID = UserID;
-    if([userID isEqualToString:_hm.strUserID]){
+    if([_userID integerValue] == [_hm.strUserID integerValue]){
 //        [_btnEdit setHidden:NO];
         [_btnEdit setSelected:NO];
         [_btnContact setImage:NULL forState:UIControlStateNormal];
@@ -124,12 +127,26 @@
         [_btnEdit setTitle:@"" forState:UIControlStateSelected];
     }
     
+    if([_hm.isSold integerValue] == 1) {
+        [_btnContact setImage:NULL forState:UIControlStateNormal];
+        [_btnContact setTitle:@"This item is sold" forState:UIControlStateNormal];
+    }
+    
+    NSString *accessToken = TOKEN;
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+    [dict setObject:accessToken forKey:@"access_token"];
+    PostActivityModel *model = [[PostActivityModel alloc]init];
+    [model getFavoritesArt:_hm.strArtID :dict :^(NSDictionary *response_success) {
+        _labelFavorite.text = [NSString stringWithFormat:@"%@ favorites",[response_success objectForKey:@"msg"]];
+    } :^(NSError *response_error) {
+        NSLog(@"%@",response_error);
+    }];
     
     [self.view setNeedsDisplay];
 }
 
 -(void)addFavorite{
-       NSString *userID = UserID;
+    NSString *userID = UserID;
     [_btnFavorite setSelected:YES];
     _hm.isFavorite = @"1";
     NSString *accessToken = TOKEN;
@@ -384,28 +401,49 @@
 }
 
 - (IBAction)actionBtnContactSeller:(id)sender{
-    if(![_userID isEqualToString:_hm.strUserID]){
-        ChatVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatVC"];
-        [self createDict];
-        [VC getUserDetails:_dictArtist];
-        [self.navigationController pushViewController:VC animated:YES];
-    }
-    else {
-        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Happy that you sold it?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    if ([_hm.isSold integerValue] == 0) {
+        if([_userID integerValue] != [_hm.strUserID integerValue]) {
+            ChatVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatVC"];
+            [self createDict];
+            [VC getUserDetails:_dictArtist];
+            [self.navigationController pushViewController:VC animated:YES];
+        }
+        else {
+            UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Happy that you sold it?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
             
-        }]];
-        
-        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Mark as Sold" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                
+            }]];
             
-        }]];
-        
-        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove Listing" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [actionSheet addAction:[UIAlertAction actionWithTitle:@"Mark as Sold" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+                [_btnContact setTitle:@"This item is sold" forState:UIControlStateNormal];
+                _hm.isSold = @"1";
+                NSString *userID = UserID;
+                NSString *accessToken = TOKEN;
+                NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+                [dict setObject:accessToken forKey:@"access_token"];
+                PostActivityModel *model = [[PostActivityModel alloc]init];
+                [model markAsSold:userID :_hm.strArtID :dict :^(NSDictionary *response_success) {
+                    NSLog(@"%@",response_success);
+                } :^(NSError *response_error) {
+                    NSLog(@"%@",response_error);
+                }];
+            }]];
             
-        }]];
-        
-        [self presentViewController:actionSheet animated:YES completion:nil];
+            [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove Listing" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+                [dict setObject:[NSString stringWithFormat:@"%@",TOKEN] forKey:@"access_token"];
+                PostActivityModel *model = [[PostActivityModel alloc]init];
+                [model deleteArt:_userID :_hm.strArtID :dict :^(NSDictionary *response_success) {
+                    NSLog(@"%@",response_success);
+                    [super showSuccess:@"Notification":@"Your art has been successfully removed."];
+                } :^(NSError *response_error) {
+                    NSLog(@"%@",response_error);
+                }];
+            }]];
+            
+            [self presentViewController:actionSheet animated:YES completion:nil];
+        }
     }
 }
 - (IBAction)actionBtnEdit:(id)sender {

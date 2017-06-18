@@ -15,6 +15,12 @@
 
 - (void)updateArt:(NSString *)userID :(NSString *) artID :(NSData *)imageData :(BOOL) isImage :(NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure;
 
+- (void)markAsSold:(NSString *)userID :(NSString *) artID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure;
+
+- (void)getFavoritesUser:(NSString *)userID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure;
+
+- (void)getFavoritesArt:(NSString *)artID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure;
+
 - (void)addFavorite:(NSString *)userID :(NSString *) artID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure;
 
 - (void)removeFavorite:(NSString *)userID :(NSString *) artID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure;

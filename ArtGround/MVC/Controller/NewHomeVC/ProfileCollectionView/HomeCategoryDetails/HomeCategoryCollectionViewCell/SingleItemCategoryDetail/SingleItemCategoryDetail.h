@@ -52,6 +52,7 @@
 @property (strong, nonatomic) IBOutlet UIView *viewProfilePic2;
 @property (weak, nonatomic) IBOutlet UIButton *btnContact;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelFavorite;
 
 @property SpinnerView *spinner;
 @property NSString *userID;

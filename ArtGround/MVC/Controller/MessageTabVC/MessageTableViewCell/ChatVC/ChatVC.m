@@ -372,7 +372,8 @@
     
     NSString *userID = UserID;
     
-    if([cm.strSendBy isEqualToString:userID]){
+    
+    if([cm.strSendBy integerValue] == [userID integerValue]){
         
         if((cm.strMedia.length != 0) || (cm.imageMessage != nil)){
             if(indexPath.row == 0){

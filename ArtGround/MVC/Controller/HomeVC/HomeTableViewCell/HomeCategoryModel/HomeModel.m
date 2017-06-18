@@ -89,10 +89,12 @@
     fm.strUserID = [attributes objectForKey:@"user_id"];
     fm.strArtistCountry = [attributes objectForKey:@"artist_country"];
     fm.strArtistProfilePic = [attributes objectForKey:@"artist_image"];
+    fm.isSold = [attributes objectForKey:@"sold"];
     fm.isFavorite = [attributes objectForKey:@"is_favourite"];
     fm.strCatName = [attributes objectForKey:@"category_name"];
     fm.strArtistAbout = [attributes objectForKey:@"about"];
     fm.strArtistGender = [attributes objectForKey:@"artist_gender"];
+    fm.strCreatedAt = [attributes objectForKey:@"created_at"];
     
     return fm;
 

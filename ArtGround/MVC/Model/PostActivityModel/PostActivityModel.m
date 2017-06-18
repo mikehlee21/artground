@@ -29,6 +29,33 @@
     
 }
 
+- (void)markAsSold:(NSString *)userID :(NSString *) artID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure{
+    
+    [iOSRequest postData:[NSString stringWithFormat:MARK_AS_SOLD_API,BASE_URL,userID,artID] :parameters :^(NSDictionary *response_success) {
+        success(response_success);
+    } :^(NSError *response_error) {
+        failure(response_error);
+    }];
+}
+
+- (void)getFavoritesUser:(NSString *)userID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure{
+    
+    [iOSRequest postData:[NSString stringWithFormat:COUNT_OF_FAVORITE,BASE_URL,userID] :parameters :^(NSDictionary *response_success) {
+        success(response_success);
+    } :^(NSError *response_error) {
+        failure(response_error);
+    }];
+}
+
+- (void)getFavoritesArt:(NSString *)artID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure{
+    
+    [iOSRequest postData:[NSString stringWithFormat:COUNT_OF_ARTS_FAVORITE,BASE_URL,artID] :parameters :^(NSDictionary *response_success) {
+        success(response_success);
+    } :^(NSError *response_error) {
+        failure(response_error);
+    }];
+}
+
 - (void)addFavorite:(NSString *)userID :(NSString *) artID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure{
     
     [iOSRequest postData:[NSString stringWithFormat:ADD_FAVORITE_API,BASE_URL,userID,artID] :parameters :^(NSDictionary *response_success) {

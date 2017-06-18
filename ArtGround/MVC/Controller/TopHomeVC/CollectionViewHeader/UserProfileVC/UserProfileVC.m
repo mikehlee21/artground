@@ -67,7 +67,7 @@
     }
     
     NSString *userID = UserID;
-    if([userID isEqualToString:_sm.strID]){
+    if([userID integerValue] == [_sm.strID integerValue]){
         [self setUpSameUserUI];
     }
     else{
@@ -182,7 +182,7 @@
     _labelAboutMe.font = [UIFont fontWithName:@"Omnes_GirlScouts-Medium" size:10.0];
 
     _labelGender.textColor = [UIColor colorWithRed:68/255.0 green:68/255.0 blue:68/255.0 alpha:1.0];
-    if([_userID isEqualToString:_sm.strID]){
+    if([_userID integerValue] == [_sm.strID integerValue]){
         _labelAboutMe.text = [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"ArtGroundUserInfo.about"];
     }
     else{

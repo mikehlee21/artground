@@ -26,9 +26,11 @@
 @property NSString *strTitle;
 @property NSString *strUserID;
 @property NSString *strPrice;
+@property NSString *isSold;
 @property NSString *isFavorite;
 @property NSString *strArtistGender;
 @property NSString *strArtistAbout;
+@property NSString *strCreatedAt;
 
 
 - (void)homeDetail:(NSString *)userID : (NSDictionary *)parameters : (void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure;

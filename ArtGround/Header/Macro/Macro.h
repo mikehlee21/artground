@@ -12,7 +12,8 @@
 
 
 #define OLD_URL @"http://code-brew.com/projects/Artground/public/"
-#define BASE_URL @"http://52.34.201.105/"
+//#define BASE_URL @"http://52.34.201.105/"
+#define BASE_URL @"http://192.168.1.118:8000/"
 #define REDDIT_BASE_URL @"https://www.reddit.com/"
 
 #define KEYBOARD_HEIGHT @"ArtGroundKeyBoardHeight"
@@ -39,6 +40,9 @@
 #define CATEGORY_DETAILS_API @"%@user/%@/home/%@"
 #define ADD_FAVORITE_API @"%@user/%@/art/%@/save"
 #define REMOVE_FAVORITE_API @"%@user/%@/art/%@/remove"
+#define MARK_AS_SOLD_API @"%@user/%@/art/%@/markassold"
+#define COUNT_OF_FAVORITE @"%@user/%@/art/saved"
+#define COUNT_OF_ARTS_FAVORITE @"%@user/%@/art/favorites"
 #define SEARCH_ART_API @"%@user/%@/search/art"
 #define POST_ART @"%@user/%@/add"
 #define USER_SEARCH_ARTIST_API @"%@user/%@/search/user"

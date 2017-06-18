@@ -79,6 +79,8 @@
     else{
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
     [dict setObject:_accessToken forKey:@"access_token"];
+        
+        NSLog(@"     TOKEN:%@",_accessToken);
 
     HomeModel *model = [[HomeModel alloc]init];
     [model categoryDetail:_userID :_catID :dict :^(NSDictionary *response_success) {
@@ -220,6 +222,8 @@
     } else {
         cell.btnFavorite.selected = YES;
     }
+    
+    cell.labelDate.text = hm.strCreatedAt;
     
 //    cell.labelName.text = hm.strArtistName;
 //    cell.labelPrice.text = [NSString stringWithFormat:@"$%@",hm.strPrice];
