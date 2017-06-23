@@ -1511,7 +1511,7 @@
 					6E3607A31BE893FB0090B318 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = CGTFV587Z4;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1931,8 +1931,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "code-brew.ArtGround";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "49d817cb-f805-4bfc-bef5-67d468697657";
+				PROVISIONING_PROFILE_SPECIFIER = dev6_19;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1945,7 +1945,7 @@
 				CODE_SIGN_ENTITLEMENTS = ArtGround/ArtGround.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CGTFV587Z4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

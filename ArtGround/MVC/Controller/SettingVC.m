@@ -133,7 +133,7 @@
             //        [VC.timer invalidate];
             [[NSUserDefaults standardUserDefaults] setValue:nil forKey:UD_TOKEN];
             [[NSUserDefaults standardUserDefaults] setValue:nil forKey:UD_USER_INFO];
-            [self performSegueWithIdentifier:@"EditProfileVC" sender:nil];
+            [self performSegueWithIdentifier:@"ExitSettingSegue" sender:nil];
             [spinner stopLoader];
             [spinner removeFromSuperview];
         } :^(NSError *response_error) {

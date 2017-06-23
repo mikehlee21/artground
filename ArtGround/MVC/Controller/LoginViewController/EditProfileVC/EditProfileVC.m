@@ -303,13 +303,20 @@
     else if (_strAboutme.length == 0){
         [super showAlert:@"Please add about me"];
     }
-    else{       
+    else if (_tfPassword.text.length == 0) {
+        [super showAlert:@"Please enter password"];
+    }
+    else if (_tfPassword.text != _tfVerifyPwd.text) {
+        [super showAlert:@"Password mismatch"];
+    }
+    else{
         [self startSpinner];
         [_dictAPI setObject:_strAboutme forKey:@"about"];
         [_dictAPI setObject:_btnGender.titleLabel.text forKey:@"gender"];
         [_dictAPI setObject:_btnCountry.titleLabel.text forKey:@"country"];
         [_dictAPI setObject:_accessToken forKey:@"access_token"];
         [_dictAPI setObject:_tfName.text forKey:@"name"];
+        [_dictAPI setObject:_tfPassword.text forKey:@"password"];
         
         //if(_profileChanged == YES && _profilePicData != nil){
         if(_profilePicData != nil){

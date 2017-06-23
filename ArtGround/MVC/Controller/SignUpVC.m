@@ -200,7 +200,8 @@
 
 - (IBAction)actionBtnT:(id)sender {
      TermsAndConditionsVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"TermsAndConditionsVC"];
-        [self presentViewController:VC animated:YES completion:nil];
+        //[self presentViewController:VC animated:YES completion:nil];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (IBAction)actionBtnCountry:(id)sender {

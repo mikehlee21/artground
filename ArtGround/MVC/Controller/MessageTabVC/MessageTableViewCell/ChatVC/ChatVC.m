@@ -186,7 +186,7 @@
     [dict setObject:_artistID forKey:@"id"];
     [dict setObject:_timeZone forKey:@"zone"];
     
-    if(lastMessageID.length == 0){
+    if(lastMessageID == nil) {
         lastMessageID = @"0";
     }
     [model getNewMessage:userID :lastMessageID :dict :^(NSDictionary *response_success) {

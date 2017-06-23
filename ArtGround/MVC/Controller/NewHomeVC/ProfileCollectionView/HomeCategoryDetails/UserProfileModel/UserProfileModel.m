@@ -28,7 +28,6 @@
     }];
 }
 - (void) updateProfile:(NSString *)userID : (NSDictionary *)parameters :(void(^)(NSDictionary * response_success))success : (void(^)(NSError * response_error))failure{
-    NSString *url =[NSString stringWithFormat:UPDATE_USER_INFO_API,BASE_URL,userID];
     [iOSRequest postData:[NSString stringWithFormat:UPDATE_USER_INFO_API,BASE_URL,userID] :parameters :^(NSDictionary *response_success) {
         success(response_success);
     } :^(NSError *response_error) {

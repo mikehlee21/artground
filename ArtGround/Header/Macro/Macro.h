@@ -13,7 +13,8 @@
 
 #define OLD_URL @"http://code-brew.com/projects/Artground/public/"
 //#define BASE_URL @"http://52.34.201.105/"
-#define BASE_URL @"http://192.168.1.118:8000/"
+//#define BASE_URL @"http://192.168.1.118:8000/"
+#define BASE_URL @"http://52.34.201.105/Artground/public/"
 #define REDDIT_BASE_URL @"https://www.reddit.com/"
 
 #define KEYBOARD_HEIGHT @"ArtGroundKeyBoardHeight"
