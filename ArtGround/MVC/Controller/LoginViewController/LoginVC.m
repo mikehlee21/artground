@@ -211,32 +211,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 #pragma mark - alertview delegate
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"%ld",(long)buttonIndex);
-    [self.view endEditing:YES];
-    if(buttonIndex == 1){
-        if([[alertView textFieldAtIndex:0].text isEqualToString:@""]){
-            [super showAlert:@"Enter a Email ID"];
-        }
-        else{
-        
-        NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
-        [dict setObject:[alertView textFieldAtIndex:0].text forKey:@"email"];
-        LoginRegisterationModel *model = [[LoginRegisterationModel alloc]init];
-        SpinnerView *spinner = [[SpinnerView alloc]initWithFrame:CGRectMake(0, 0, kframe.width, kframe.height) andColor:[UIColor whiteColor]];
-        [[[[UIApplication sharedApplication] delegate] window] addSubview:spinner];
-        [spinner startLoader];
-        [model forgotPassword:dict :^(NSDictionary *response_success) {
-            NSLog(@"%@",response_success);
-            [spinner stopLoader];
-            [spinner removeFromSuperview];
-            [super showAlert:[response_success valueForKey:@"msg"]];
-        } :^(NSError *response_error) {
-            [spinner stopLoader];
-            [spinner removeFromSuperview];
-            NSLog(@"%@",response_error);
-        }];
-        }
-    }
+    
 
 }
 
@@ -274,16 +249,49 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
 - (IBAction)actionBtnForgotPassword:(id)sender {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset Password"
-                                                    message:@"Please enter your email"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"OK",nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    UITextField* tf = [alert textFieldAtIndex:0];
-    tf.keyboardType = UIKeyboardTypeEmailAddress;
-    [alert show];
-
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Forgot your password?" message:@"Enter your email below:" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.keyboardType = UIKeyboardTypeEmailAddress;
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
+    
+    UIAlertAction *recover = [UIAlertAction actionWithTitle:@"Recover" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        UITextField *tf = alert.textFields.firstObject;
+        if ([tf.text isEqualToString:@""]) {
+            [super showAlert:@"Enter a Email ID"];
+        }        
+        else{
+            [super showAlert:@"If you had an account with us, an email will be sent to your inbox."];
+            NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+            [dict setObject:tf.text forKey:@"email"];
+            LoginRegisterationModel *model = [[LoginRegisterationModel alloc]init];
+            SpinnerView *spinner = [[SpinnerView alloc]initWithFrame:CGRectMake(0, 0, kframe.width, kframe.height) andColor:[UIColor whiteColor]];
+            [[[[UIApplication sharedApplication] delegate] window] addSubview:spinner];
+            //[spinner startLoader];
+            [model forgotPassword:dict :^(NSDictionary *response_success) {
+                NSLog(@"%@",response_success);
+                //[spinner stopLoader];
+                //[spinner removeFromSuperview];
+            } :^(NSError *response_error) {
+                //[spinner stopLoader];
+                //[spinner removeFromSuperview];
+                NSLog(@"%@",response_error);
+            }];
+        }
+    }];
+    
+    [alert addAction:cancel];
+    [alert addAction:recover];
+    
+    [self presentViewController:alert animated:YES completion:^{
+        
+    }];
 }
 
 - (IBAction)actionBtnSignin:(id)sender {

@@ -67,6 +67,9 @@
     [_labelName addGestureRecognizer:_labelTapGesure];
     [_imageViewProfilePic2 addGestureRecognizer:_tapGesure];
     
+    _labelInfo.delegate = self;
+    _labelInfo.lineBreakMode = NSLineBreakByCharWrapping;
+    
  
     [_imageViewPost sd_setImageWithURL:[NSURL URLWithString:_hm.strPostImage]];
     
@@ -75,7 +78,9 @@
     
     _labelName.text  = _hm.strArtistName;
     _labelPrice.text = [NSString stringWithFormat:@"$%@",_hm.strPrice];
-    _labelInfo.text = [_hm.strDescription uppercaseString];
+    //_labelInfo.text = _hm.strDescription;
+
+    [_labelInfo setString:_hm.strDescription];
     _labelTitle.text = _hm.strTitle;
     _lblTitle.text = _hm.strTitle;
     _labelCountry.text = [_hm.strArtistCountry uppercaseString];
@@ -83,16 +88,26 @@
     _labelName.textColor = [UIColor colorWithRed:68/255.0 green:68/255.0 blue:68/255.0 alpha:1.0];
     _labelCountry.font = [UIFont fontWithName:@"Omnes_GirlScouts-Medium" size:10.0];
     _labelCountry.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
-    _labelInfo.font = [UIFont fontWithName:@"Omnes_GirlScouts-Regular" size: 13.0];
-    _labelInfo.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
+    //_labelInfo.font = [UIFont fontWithName:@"Omnes_GirlScouts-Regular" size: 13.0];
+    //_labelInfo.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
     
     if([_hm.isFavorite integerValue] == 0){
-         [_btnFavorite setSelected:NO];
+        _btnFavorite.selected = NO;
      }
     else{
-           [_btnFavorite setSelected:YES];
+        _btnFavorite.selected = YES;
     }
-    
+    /*
+    if ([_labelInfo.text hasPrefix:@"http://"] || [_labelInfo.text hasPrefix:@"https://"])
+    {
+        _labelInfo.textColor = [UIColor colorWithRed:150/255.f green:150/255.f blue:1.0 alpha:1.0];
+        NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:_labelInfo.text];
+        [attributeString addAttribute:NSUnderlineStyleAttributeName
+                                value:[NSNumber numberWithInt:1]
+                                range:(NSRange){0,[attributeString length]}];
+        [_labelInfo setAttributedText:attributeString];
+    }
+    */
     if ([_hm.isSold integerValue] == 0) {
         
     }
@@ -100,12 +115,8 @@
     
     [self.view layoutIfNeeded];
     
-    _viewProfilePic2.layer.cornerRadius = self.viewProfilePic.frame.size.width/2;
-    _viewProfilePic2.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1] CGColor];
-    _viewProfilePic2.layer.borderWidth = 3.0f;
-    
     _imageViewProfilePic2.layer.borderWidth = 3.0f;
-    _imageViewProfilePic2.layer.cornerRadius = 30.0f;
+    _imageViewProfilePic2.layer.cornerRadius = _imageViewProfilePic2.frame.size.width/2;
     _imageViewProfilePic2.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1]CGColor];
     [_imageViewProfilePic2 setClipsToBounds:YES];
     [_imageViewProfilePic2.layer setMasksToBounds:YES];
@@ -143,6 +154,10 @@
     }];
     
     [self.view setNeedsDisplay];
+}
+
+- (void)selectedLink:(NSString *)string {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string]];
 }
 
 -(void)addFavorite{
@@ -200,11 +215,13 @@
     [_dictFav setObject:_accessToken forKey:@"access_token"];
     
     
-    if([_hm.isFavorite integerValue] == 0){
-        [self addFavorite];
-    }
-    else if([_hm.isFavorite integerValue] ==1 ){
+    if ([_btnFavorite isSelected] == YES) {
+        _btnFavorite.selected = NO;
         [self removeFavorite];
+    }
+    else {
+        _btnFavorite.selected = YES;
+        [self addFavorite];
     }
 }
 -(void)labelTapped:(UITapGestureRecognizer *)gesture{
@@ -386,7 +403,13 @@
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Copy Picture URL" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.string = _hm.strPostImage;
+        
+        NSString *str = _hm.strPostImage;
+        
+        str = [str stringByReplacingOccurrencesOfString:@"backend/public/resize"
+                                             withString:@"artground"];
+        
+        pasteboard.string = str;
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Share on Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

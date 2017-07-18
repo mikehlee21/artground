@@ -20,6 +20,20 @@
     [self initializeAPI];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    UITextField *txfSearchField = [_searchBarBetaX valueForKey:@"_searchField"];
+    
+    // Setting up Search Text Field UI
+    
+    txfSearchField.backgroundColor = [UIColor colorWithRed:213/255.f green:213/255.f blue:213/255.f alpha:1];
+    txfSearchField.textColor = [UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1];
+    [txfSearchField setValue:[UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    txfSearchField.placeholder = @"Search                                                                         ";
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -55,13 +69,6 @@
     txfSearchField.leftView = whatSearchView;
      
     */
-    UITextField *txfSearchField = [_searchBarBetaX valueForKey:@"_searchField"];
-    
-    // Setting up Search Text Field UI
-        
-    txfSearchField.backgroundColor = [UIColor colorWithRed:213/255.f green:213/255.f blue:213/255.f alpha:1];
-    txfSearchField.textColor = [UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1];
-    [txfSearchField setValue:[UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
      
 //    [self setSearchIcon];
 }
@@ -224,6 +231,7 @@
     }
     
     cell.labelDate.text = hm.strCreatedAt;
+    
     
 //    cell.labelName.text = hm.strArtistName;
 //    cell.labelPrice.text = [NSString stringWithFormat:@"$%@",hm.strPrice];

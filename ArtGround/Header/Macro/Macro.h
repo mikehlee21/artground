@@ -14,7 +14,7 @@
 #define OLD_URL @"http://code-brew.com/projects/Artground/public/"
 //#define BASE_URL @"http://52.34.201.105/"
 //#define BASE_URL @"http://192.168.1.118:8000/"
-#define BASE_URL @"http://52.34.201.105/Artground/public/"
+#define BASE_URL @"http://52.34.201.105/backend/public/"
 #define REDDIT_BASE_URL @"https://www.reddit.com/"
 
 #define KEYBOARD_HEIGHT @"ArtGroundKeyBoardHeight"
@@ -62,7 +62,7 @@
 #define UPDATE_ART @"%@user/%@/part/%@/update"
 #define BLOCK_OTHER_USER @"%@user/%@/block/ouser"
 #define GET_BLOCKED_LIST @"%@/user/%@/blocked/users"
-#define PRIVACY_POLICY_URL @"http://52.34.201.105/privacy_policy"
+#define PRIVACY_POLICY_URL @"http://52.34.201.105/backend/public/privacy_policy"
 #define REDDIT_LOGIN @"%@api/login"
 #define REDDIT_SUBMIT @"%@api/submit"
 #define GET_CAPTCHA @"%@captcha/%@.png"

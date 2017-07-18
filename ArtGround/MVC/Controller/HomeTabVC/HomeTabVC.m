@@ -46,9 +46,13 @@
         _viewTabScroll.frame = CGRectMake(0, 0, _btnHome.frame.size.width,_viewTabScroll.frame.size.height);
         //    [_btnFollowing setSelected:YES];
         //    [_btnNearby setSelected:NO];
+        [_btnHome setTitleColor:[UIColor colorWithRed:255/255.0f green:0/255.0f blue:90/255.0f alpha:1.0] forState:UIControlStateNormal];
+        [_btnProfile setTitleColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0] forState:UIControlStateNormal];
+        [_btnTop setTitleColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0] forState:UIControlStateNormal];
     }];
     _viewControllers = [[NSArray alloc]initWithObjects:_home, nil];
     [self.pageController setViewControllers:_viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+    
 }
 
 -(void)addPageController {

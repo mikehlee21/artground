@@ -75,7 +75,7 @@
     _tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tappedTableView:)];
     [_tableView addGestureRecognizer:_tapGesture];
     
-    _textViewMessages.placeholder = @"Hey, I'm interested in buying...";
+    _textViewMessages.placeholder = @"Write a message";
     _textViewMessages.backgroundColor = [UIColor clearColor];
     
     _viewTop.backgroundColor = kAppColor;
@@ -400,6 +400,7 @@
                 myImageCell.imageMessage = cm.imageMessage;
             }
             myImageCell.labelDate.text = cm.strDate;
+            myImageCell.labelTime.text = cm.strTime;
             return myImageCell;
         }
         else{
@@ -419,6 +420,7 @@
             myMessage.viewMyMessage.layer.cornerRadius = 10.0;
             myMessage.labelMyMessage.text = cm.strMessage;
             myMessage.labelDate.text = cm.strDate;
+            myMessage.labelTime.text = cm.strTime;
             
             /*
             myMessage.viewMyMessage.backgroundColor = [UIColor whiteColor];
@@ -458,6 +460,10 @@
                 otherImageCell.imageMessage = cm.imageMessage;
             }
             otherImageCell.labelDate.text = cm.strDate;
+            otherImageCell.labelTime.text = cm.strTime;
+            
+            NSString* wholeImageUrl = [NSString stringWithFormat:@"https://artground.xyz/artground/%@", _artistImage];
+            [otherImageCell.imgOpponent sd_setImageWithURL:[NSURL URLWithString:wholeImageUrl] placeholderImage:kDefaultPic];
             return otherImageCell;
         }
         else{
@@ -479,6 +485,10 @@
             otherMessage.viewOtherMessage.layer.cornerRadius = 10.0;
             otherMessage.labelOtherMessage.text = cm.strMessage;
             otherMessage.labelDate.text = cm.strDate;
+            otherMessage.labelTime.text = cm.strTime;
+            
+            NSString* wholeImageUrl = [NSString stringWithFormat:@"https://artground.xyz/artground/%@", _artistImage];
+            [otherMessage.imgOpponent sd_setImageWithURL:[NSURL URLWithString:wholeImageUrl] placeholderImage:kDefaultPic];
             
             /*
             otherMessage.viewOtherMessage.backgroundColor = kAppColor;
@@ -606,9 +616,16 @@
 
 - (IBAction)actionBtnSend:(id)sender{
     
+    NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd, yyyy"];
-    NSString *date = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:[NSDate date]]];
+    NSString *date = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:currentTime]];
+    
+    [dateFormatter setDateFormat:@"hh:mm a"];
+    NSString *time = [dateFormatter stringFromDate: currentTime];
+    
+    time = [time stringByReplacingOccurrencesOfString:@"AM" withString:@"am"];
+    time = [time stringByReplacingOccurrencesOfString:@"PM" withString:@"pm"];
     
     
     _message = [_textViewMessages.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -629,6 +646,7 @@
         cm.strMessage = _message;
         cm.strSendBy = [NSString stringWithFormat:@"%@",UserID];
         cm.strDate = date;
+        cm.strTime = time;
         
         [self scrollTableToLastComment:YES];
         

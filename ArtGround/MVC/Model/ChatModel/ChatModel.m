@@ -100,6 +100,7 @@
     fm.strCreatedAt = [attributes objectForKey:@"created_at"];
     fm.strIsread = [attributes objectForKey:@"is_read"];
     fm.strDate = [attributes objectForKey:@"date"];
+    fm.strTime = [attributes objectForKey:@"time"];
     fm.strMedia = [attributes objectForKey:@"media"];
     fm.imageMessage = nil;
     

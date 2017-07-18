@@ -14,6 +14,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelOtherMessage;
 @property (strong, nonatomic) IBOutlet UIView *viewDate;
 @property (strong, nonatomic) IBOutlet UILabel *labelDate;
+@property (weak, nonatomic) IBOutlet UIImageView *imgOpponent;
+@property (weak, nonatomic) IBOutlet UILabel *labelTime;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightViewdate;
 @end

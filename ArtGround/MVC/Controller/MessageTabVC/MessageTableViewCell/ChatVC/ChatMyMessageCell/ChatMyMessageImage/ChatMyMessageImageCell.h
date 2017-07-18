@@ -19,5 +19,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *labelDate;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightViewDate;
+@property (weak, nonatomic) IBOutlet UILabel *labelTime;
 
 @end

@@ -67,8 +67,9 @@ static dispatch_once_t once;
 
 
 @property (strong, nonatomic) IBOutlet UIView *viewTop;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *scrollViewBottomConstraint;
 @property NSString *strShowCancel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 
 
 - (IBAction)actionBtnGender:(id)sender;

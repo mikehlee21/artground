@@ -127,6 +127,7 @@
         cell.btnFavorite.selected = YES;
     }
     
+    cell.labelDate.text = hm.strCreatedAt;
     cell.hm = hm;
     //[cell.imageViewPost sd_setImageWithURL:[NSURL URLWithString:hm.strPostImage]];
         return cell;

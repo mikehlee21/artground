@@ -24,6 +24,8 @@
     _labelName.text = model.strName;
     [_imageViewProfilePic sd_setImageWithURL:[NSURL URLWithString:model.strProfilePic] placeholderImage:kDefaultPic];
     [_imageViewProfilePic.layer setCornerRadius:_imageViewProfilePic.frame.size.height/2];
+    _imageViewProfilePic.layer.borderColor = [[UIColor colorWithRed:255/255.f green:0/255.f blue:90/255.f alpha:1] CGColor];
+    _imageViewProfilePic.layer.borderWidth = 3.0;
     [_imageViewProfilePic setClipsToBounds:YES];
     
 }

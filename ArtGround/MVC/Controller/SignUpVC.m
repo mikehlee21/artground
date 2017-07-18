@@ -301,11 +301,26 @@
             if([[response_success valueForKey:@"success"] integerValue] == 1){
                 //Handle here
                 
-                [[NSUserDefaults standardUserDefaults] setObject:[response_success valueForKey:@"user"] forKey:UD_USER_INFO];
-                [[NSUserDefaults standardUserDefaults] setObject:[response_success valueForKeyPath:@"user.access_token"] forKey:UD_TOKEN];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Hooray, you had successfully registered an account." preferredStyle:UIAlertControllerStyleAlert];
                 
-                TabBarControllerVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarControllerVC"];
-                [self.navigationController pushViewController:VC animated:YES];
+                UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    [alert dismissViewControllerAnimated:YES completion:^{
+                        
+                    }];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+                
+                [alert addAction:cancel];
+                [self presentViewController:alert animated:YES completion:^{
+                    
+                }];
+                
+                //[[NSUserDefaults standardUserDefaults] setObject:[response_success valueForKey:@"user"] forKey:UD_USER_INFO];
+                //[[NSUserDefaults standardUserDefaults] setObject:[response_success valueForKeyPath:@"user.access_token"] forKey:UD_TOKEN];
+                
+                //TabBarControllerVC *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarControllerVC"];
+                //[self.navigationController pushViewController:VC animated:YES];
+                
             }
             else{
                 _alertMessage = [response_success valueForKey:@"msg"];

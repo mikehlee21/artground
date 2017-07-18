@@ -14,6 +14,7 @@
     //_viewDate.layer.cornerRadius = 4.0;
     //[_viewDate setClipsToBounds:YES];
     //_viewDate.backgroundColor = kAppColor;
+    _imgOpponent.layer.cornerRadius = _imgOpponent.frame.size.width/2;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

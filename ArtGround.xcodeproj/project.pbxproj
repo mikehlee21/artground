@@ -148,6 +148,7 @@
 		6ECBB1271C2558E60054C7E9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECBB1261C2558E60054C7E9 /* Reachability.m */; };
 		A110A6191CFEA3BF004688A0 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A110A6171CFEA3BF004688A0 /* Fabric.framework */; };
 		A110A61A1CFEA3BF004688A0 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A110A6181CFEA3BF004688A0 /* Crashlytics.framework */; };
+		B31424651F19E6E60014F94B /* AMAttributedHighlightLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B31424641F19E6E60014F94B /* AMAttributedHighlightLabel.m */; };
 		B37B8C141EF204FC0022833F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37B8C131EF204FC0022833F /* Assets.xcassets */; };
 		ED1A69FD1DE0D8C100137D3F /* AboutMeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1A69FB1DE0D8C100137D3F /* AboutMeDetails.m */; };
 		ED1A6A001DE0D93300137D3F /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A69FF1DE0D93300137D3F /* RatingView.xib */; };
@@ -402,6 +403,8 @@
 		97C5B7661E6948D100C25E05 /* ArtGround.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtGround.entitlements; sourceTree = "<group>"; };
 		A110A6171CFEA3BF004688A0 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A110A6181CFEA3BF004688A0 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		B31424631F19E6E60014F94B /* AMAttributedHighlightLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAttributedHighlightLabel.h; sourceTree = "<group>"; };
+		B31424641F19E6E60014F94B /* AMAttributedHighlightLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAttributedHighlightLabel.m; sourceTree = "<group>"; };
 		B37B8C131EF204FC0022833F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1A69FA1DE0D8C100137D3F /* AboutMeDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutMeDetails.h; path = ArtGround/MVC/View/AboutMeView/AboutMeDetails.h; sourceTree = SOURCE_ROOT; };
 		ED1A69FB1DE0D8C100137D3F /* AboutMeDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutMeDetails.m; path = ArtGround/MVC/View/AboutMeView/AboutMeDetails.m; sourceTree = SOURCE_ROOT; };
@@ -1363,6 +1366,7 @@
 		6EBAE0DF1C0EFCC10076BFA7 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B31424621F19E6D10014F94B /* AMAttributedHighlight */,
 				A110A6161CFEA37D004688A0 /* Crashlytics */,
 				6E98D49E1C2139FF00B7E65E /* CustomBadge */,
 				6EBC07401C186B40005FC27D /* UITextViewPlaceholder */,
@@ -1440,6 +1444,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B31424621F19E6D10014F94B /* AMAttributedHighlight */ = {
+			isa = PBXGroup;
+			children = (
+				B31424631F19E6E60014F94B /* AMAttributedHighlightLabel.h */,
+				B31424641F19E6E60014F94B /* AMAttributedHighlightLabel.m */,
+			);
+			name = AMAttributedHighlight;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1511,7 +1524,7 @@
 					6E3607A31BE893FB0090B318 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = CGTFV587Z4;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1707,6 +1720,7 @@
 				6E534A081BEB5463007F8A3F /* ProfileHomeVC.m in Sources */,
 				6ECBB11F1C2545970054C7E9 /* TermsAndConditionsVC.m in Sources */,
 				6E2C587D1C06C69C00BE54A6 /* ChatVC.m in Sources */,
+				B31424651F19E6E60014F94B /* AMAttributedHighlightLabel.m in Sources */,
 				6E8E50AE1C16BDD100BCD77A /* SBJsonBase.m in Sources */,
 				0BDDCA671D5B9285005CB4EC /* ChatOtherMessageCell.m in Sources */,
 				0BDDCA6A1D5B9297005CB4EC /* ChatMyMessageCell.m in Sources */,
@@ -1931,8 +1945,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "code-brew.ArtGround";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "49d817cb-f805-4bfc-bef5-67d468697657";
-				PROVISIONING_PROFILE_SPECIFIER = dev6_19;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1945,7 +1959,7 @@
 				CODE_SIGN_ENTITLEMENTS = ArtGround/ArtGround.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CGTFV587Z4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

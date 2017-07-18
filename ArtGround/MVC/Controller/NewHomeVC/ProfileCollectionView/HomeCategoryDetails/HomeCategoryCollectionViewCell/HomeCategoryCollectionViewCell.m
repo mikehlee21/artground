@@ -15,14 +15,28 @@
     _labelPrice.textColor = kSelColor;
     _labelTitle.textColor = klightGray;
     _labelDate.textColor = ksuperLightGray;
-    _viewContent.layer.cornerRadius = 4.0;
-    self.layer.cornerRadius = 4.0;
-    self.imageViewPost.layer.cornerRadius = 4.0;
+    _viewContent.layer.cornerRadius = 5.0;
+    self.layer.cornerRadius = 5.0;
+    //self.imageViewPost.layer.cornerRadius = 4.0;
     
     
 //    [self setClipsToBounds:YES];
     [self.viewContent setClipsToBounds:YES];
     [self.imageViewPost setClipsToBounds:YES];
+    [self setClipsToBounds:YES];
+    
+    UIBezierPath *maskPath = [UIBezierPath
+                              bezierPathWithRoundedRect:self.imageViewPost.bounds
+                              byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight)
+                              cornerRadii:CGSizeMake(4, 4)
+                              ];
+    
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    
+    maskLayer.frame = self.imageViewPost.frame;
+    maskLayer.path = maskPath.CGPath;
+    
+    self.imageViewPost.layer.mask = maskLayer;
     
 }
 - (IBAction)onFavorite:(id)sender {

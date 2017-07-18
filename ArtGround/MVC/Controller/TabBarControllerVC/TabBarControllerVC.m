@@ -106,7 +106,11 @@
 
 -(void)notificationReceived:(NSNotification *)noti{
     
-    [[self.tabBar.items objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%@",[noti.userInfo valueForKeyPath:@"aps.alert.loc-args.c"]]];
+    //[[self.tabBar.items objectAtIndex:3] setBadgeValue:[NSString stringWithFormat:@"%@",[noti.userInfo valueForKeyPath:@"aps.alert.loc-args.c"]]];
+    NSString *temp = [NSString stringWithFormat:@"%@",[noti.userInfo valueForKeyPath:@"aps.alert.loc-args.c"]];
+    NSLog(temp);
+    [self.tabBar.items objectAtIndex:3].badgeValue = [NSString stringWithFormat:@"%@",[noti.userInfo valueForKeyPath:@"aps.alert.loc-args.c"]];
+    
     [UIApplication sharedApplication].applicationIconBadgeNumber = [[noti.userInfo valueForKeyPath:@"aps.alert.loc-args.c"] integerValue];
 //    MessageTabVC *VC;
 //    [VC initializeAPI];

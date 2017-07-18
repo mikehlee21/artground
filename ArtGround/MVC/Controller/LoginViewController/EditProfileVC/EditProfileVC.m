@@ -28,6 +28,8 @@
     [super viewWillAppear:animated];
 //    [self initialise];
    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getAboutMeDetails:) name:@"about_me" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -79,10 +81,10 @@
     [self.view layoutIfNeeded];
     _imageViewProflePic.layer.cornerRadius = _imageViewProflePic.frame.size.width/2;
     [_imageViewProflePic setClipsToBounds:YES];
-    _viewProfilePic.layer.cornerRadius = _viewProfilePic.frame.size.width/2;
+    //_viewProfilePic.layer.cornerRadius = _viewProfilePic.frame.size.width/2;
     [_viewProfilePic setClipsToBounds:YES];
-    _viewProfilePic.layer.borderColor = [[UIColor colorWithRed:204/255.f green:205/255.f blue:206/255.f alpha:1]CGColor];
-    _viewProfilePic.layer.borderWidth = 2.5;
+    //_viewProfilePic.layer.borderColor = [[UIColor colorWithRed:204/255.f green:205/255.f blue:206/255.f alpha:1]CGColor];
+    //_viewProfilePic.layer.borderWidth = 2.5;
     _viewTop.backgroundColor = kAppColor;
     
     NSLocale *locale = [NSLocale currentLocale];
@@ -300,9 +302,6 @@
     else if (_btnGender.titleLabel.text.length == 0){
         [super showAlert:@"Please select your gender"];
     }
-    else if (_strAboutme.length == 0){
-        [super showAlert:@"Please add about me"];
-    }
     else if (_tfPassword.text.length == 0) {
         [super showAlert:@"Please enter password"];
     }
@@ -373,15 +372,32 @@
     return YES;
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    _scrollViewBottomConstraint.constant = _keyBoardHeight;
     
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField{
-    _scrollViewBottomConstraint.constant = 0;
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
-    _scrollViewBottomConstraint.constant = 0;
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    [self.view endEditing:YES];
+    return YES;
+}
+
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    // Assign new frame to your view
+    _topConstraint.constant = -_keyBoardHeight + 50;
+}
+
+-(void)keyboardDidHide:(NSNotification *)notification
+{
+    _topConstraint.constant = 0;
 }
 
 #pragma mark - action Sheet Delegate

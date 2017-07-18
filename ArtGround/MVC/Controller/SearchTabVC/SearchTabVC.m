@@ -20,6 +20,17 @@
     [self initialize];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    UITextField *txfSearchField = [_searchBar valueForKey:@"_searchField"];
+    txfSearchField.backgroundColor = [UIColor colorWithRed:213/255.f green:213/255.f blue:213/255.f alpha:1];
+    txfSearchField.textColor = [UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1];
+    [txfSearchField setValue:[UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    txfSearchField.placeholder = @"Search                                                                         ";
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     if([[_dictSearch valueForKey:@"search"] length] != 0){
@@ -43,10 +54,12 @@
     // Setting up Search Text Field UI
 
     
-    UITextField *txfSearchField = [_searchBar valueForKey:@"_searchField"];
-    txfSearchField.backgroundColor = [UIColor colorWithRed:213/255.f green:213/255.f blue:213/255.f alpha:1];
-    txfSearchField.textColor = [UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1];
-    [txfSearchField setValue:[UIColor colorWithRed:122/255.f green:122/255.f blue:122/255.f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    //UITextField *searchTextField = [((UITextField *)[self.searchBar.subviews objectAtIndex:0]).subviews lastObject];
+    //searchTextField.layer.cornerRadius = 15.0f;
+    //searchTextField.textAlignment = NSTextAlignmentLeft;
+    
+    //[_searchBar setPositionAdjustment:UIOffsetMake(-50, 0) forSearchBarIcon:UISearchBarIconSearch];
+    //_searchBar.searchTextPositionAdjustment = UIOffsetMake(-50, 0);
     /*
     // change search bar Outer border color to clear color
 
@@ -153,6 +166,7 @@
         cell.btnFavorite.selected = YES;
     }
     
+    cell.labelDate.text = hm.strCreatedAt;
     cell.hm = hm;
     
     return cell;

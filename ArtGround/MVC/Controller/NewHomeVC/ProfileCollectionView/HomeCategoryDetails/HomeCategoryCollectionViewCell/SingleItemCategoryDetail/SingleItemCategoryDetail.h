@@ -28,8 +28,9 @@
 #import "SellTabVC.h"
 #import "SpinnerView.h"
 #import <Social/Social.h>
+#import "AMAttributedHighlightLabel.h"
 
-@interface SingleItemCategoryDetail :BaseVC <  UIGestureRecognizerDelegate, UIActionSheetDelegate, UIAlertViewDelegate >
+@interface SingleItemCategoryDetail :BaseVC <  UIGestureRecognizerDelegate, UIActionSheetDelegate, UIAlertViewDelegate , AMAttributedHighlightLabelDelegate>
 
 -(void)getModel:(HomeModel *)model;
 
@@ -37,14 +38,15 @@
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *imageViewHeightConstraint;
 @property (strong, nonatomic) IBOutlet UIView *viewProfilePic;
-@property (strong, nonatomic) IBOutlet UIButton *btnFavorite;
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewPost;
 @property (strong, nonatomic) IBOutlet UILabel *labelName;
 @property (strong, nonatomic) IBOutlet UIView *viewTop;
 @property (strong, nonatomic) IBOutlet UILabel *labelPrice;
 @property (strong, nonatomic) IBOutlet UILabel *labelTitle;
 @property (strong, nonatomic) IBOutlet UILabel *labelCountry;
-@property (strong, nonatomic) IBOutlet UILabel *labelInfo;
+//@property (strong, nonatomic) IBOutlet UILabel *labelInfo;
+
+@property (weak, nonatomic) IBOutlet AMAttributedHighlightLabel *labelInfo;
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewProfilePic;
 @property (strong, nonatomic) IBOutlet UIButton *btnEdit;
 
@@ -53,6 +55,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnContact;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelFavorite;
+@property (weak, nonatomic) IBOutlet UIImageView *imgFavorite;
+@property (weak, nonatomic) IBOutlet UIButton *btnFavorite;
 
 @property SpinnerView *spinner;
 @property NSString *userID;
@@ -70,6 +74,7 @@
 - (IBAction)actionBtnShareViaFacebook:(id)sender;
 - (IBAction)actionBtnContactSeller:(id)sender;
 - (IBAction)actionBtnEdit:(id)sender;
+- (IBAction)actionLblInfo:(id)sender;
 @property NSMutableDictionary *dictAPI;
 
 
